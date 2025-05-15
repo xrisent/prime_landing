@@ -61,6 +61,26 @@ Button.request:hover {
 
 
 
+.Button.start {
+    background: var(--333);
+    color: #fff;
+}
+
+Button.start:hover {
+    border: 3px solid var(--333);
+    background: rgba(210, 50, 22, 0.2);
+    color: #fff;
+}
+
+.Button.startSize {
+    font-weight: 700;
+    font-size: 24px;
+    width: 330px;
+    height: 55px;
+}
+
+
+
 
 .Button.number{
     border: 1px solid white;

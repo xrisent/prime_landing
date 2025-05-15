@@ -1,0 +1,24 @@
+.questions {
+    padding: 75px 0;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 80px;
+
+        .questions__title {
+            font-family: "Gilroy";
+            font-weight: 600;
+            font-size: 46px;
+            line-height: 109%;
+            color: var(--zagol);
+        }
+
+        .questions__items {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+}
