@@ -1,8 +1,8 @@
 export interface ButtonProps {
     text: string | boolean;
     onClick?: () => void;
-    variant?: 'request' | '' | '';
-    size?: 'requestSize' | 'Size' | 'Size';
+    variant?: 'request' | 'number' | '';
+    size?: 'requestSize' | 'requestSize' | 'Size';
     disabled?: boolean;
     type?: 'button' | 'submit' | 'reset';
 }

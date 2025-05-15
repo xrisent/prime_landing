@@ -1,5 +1,5 @@
 .header {
-    background: var(--osnov);
+    background: transparent;
     padding: 31px 0;
     color: #fff;
 
@@ -28,6 +28,10 @@
             align-items: center;
             column-gap: 54px;
 
+            .header__btn{
+                display: flex;
+                gap: 10px;
+            }
 
             .header__burger {
                 display: none;
