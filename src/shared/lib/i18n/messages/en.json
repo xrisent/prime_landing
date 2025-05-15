@@ -1,18 +1,27 @@
 {
-    "Header":{
-        "btn2": "Leave a request"
-    },
+  "Header": {
+    "btn2": "Leave a request"
+  },
 
-    "Hero":{
-        "h1": "Open a business in UAE - fast and stress-free",
-        "p": "Register a company with professional support - from choosing the form to obtaining a license.",
-        "telegram": "Write in chat",
-        "whatsapp": "Write to WhatsApp",
-        "li1First": "1000+",
-        "li1Second": "customers",
-        "li2First": "5 years",
-        "li2Second": "in market",
-        "li3First": "We work under",
-        "li3Second": "contract"
-    }
+  "Hero": {
+    "h1": "Open a business in UAE - fast and stress-free",
+    "p": "Register a company with professional support - from choosing the form to obtaining a license.",
+    "telegram": "Write in chat",
+    "whatsapp": "Write to WhatsApp",
+    "li1First": "1000+",
+    "li1Second": "customers",
+    "li2First": "5 years",
+    "li2Second": "in market",
+    "li3First": "We work under",
+    "li3Second": "contract",
+    "formDescription": "Get started today - get a free consultation"
+  },
+
+  "FormHero": {
+    "name": "Name",
+    "email": "E-mail address",
+    "number": "Phone number",
+    "message": "Message",
+    "send": "Send"
+  }
 }
