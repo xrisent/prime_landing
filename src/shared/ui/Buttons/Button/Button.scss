@@ -1,0 +1,33 @@
+.Button  {
+    border: none;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+    position: relative;
+}
+
+
+
+
+.Button.request {
+    background: #fff;
+    color: var(--osnov);
+}
+
+Button.request:hover {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.Button.requestSize {
+    font-weight: 700;
+    font-size: 20px;
+    width: 215px;
+    height: 50px;
+}
+
+
+
+
+
+

@@ -1,0 +1,140 @@
+.burger {
+    width: 33px;
+    height: 21px;
+    position: relative;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+
+    .line {
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #fff;
+        border-radius: 1.5px;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+
+    .line:nth-child(1) {
+        top: 0;
+    }
+
+    .line:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .line:nth-child(3) {
+        bottom: 0;
+    }
+
+    &.active {
+        .line:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .line:nth-child(2) {
+            opacity: 0;
+            transform: translateY(-50%) scaleX(0);
+        }
+
+        .line:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+    }
+
+    @media (max-width: 500px) {
+        width: 22px;
+        height: 14px;
+
+        .line {
+            height: 2px;
+            border-radius: 1px;
+        }
+
+        &.active {
+            .line:nth-child(1) {
+                transform: translateY(6px) rotate(45deg);
+            }
+
+            .line:nth-child(3) {
+                transform: translateY(-6px) rotate(-45deg);
+            }
+        }
+    }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+}
+
+.menu {
+  position: absolute;
+  top: 144px;
+  right: 0;
+  width: 178px;
+  height: 215px;
+  padding: 15px 25px;
+  background-color: #fff;
+  border-radius: 0 0 5px 5px;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
+
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    li {
+
+      a {
+        color: var(--zagol);
+        font-weight: 700;
+        font-size: 18px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.open {
+  animation: slideDown 0.3s ease forwards;
+  pointer-events: all;
+}
+
+.close {
+  animation: slideUp 0.3s ease forwards;
+  pointer-events: none;
+}
+
+
+@media (max-width: 600px) {
+    .menu {
+       top: 69px;
+    }
+}
