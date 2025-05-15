@@ -5,13 +5,13 @@
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto=Medium";
   src: url('/assets/fonts/Roboto/Roboto-Medium.ttf') format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Roboto";
+  font-family: "Roboto-Bold";
   src: url('/assets/fonts/Roboto/Roboto-Bold.ttf') format("truetype");
   font-weight: 600;
 }
@@ -23,13 +23,13 @@
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: "Gilroy-Medium";
   src: url('/assets/fonts/Gilroy/Gilroy-Medium.ttf') format("truetype");
   font-weight: 500;
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: "Gilroy-Bold";
   src: url('/assets/fonts/Gilroy/Gilroy-Bold.ttf') format("truetype");
   font-weight: 600;
 }
@@ -48,7 +48,6 @@ body {
   flex-direction: column;
   font-family: "Roboto";
   background-color: #EEEEEE;
-  /* background: url('/assets/images/HeroBg.svg') center/cover no-repeat; */
 }
 
 a {

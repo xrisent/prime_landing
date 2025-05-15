@@ -1,0 +1,24 @@
+.WhatsappButton {
+  border: none;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+  background: #22B832;
+  font-family: var(--second-family);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.WhatsappButton:hover {
+  background: #086B13;
+}
+
+.WhatsappButton.medium {
+  padding: 15px 20px;
+  width: 330px;
+  height: 59px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+}

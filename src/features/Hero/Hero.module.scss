@@ -1,0 +1,71 @@
+.hero {
+  background: url("/assets/images/HeroBg.svg") center/cover no-repeat;
+  height: 100vh;
+  padding-top: 277px;
+
+  .containerHero {
+    height: 100%;
+  }
+
+  &Left {
+    width: 684px;
+    height: 100%;
+
+    &__text {
+      width: 684px;
+      height: 305px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      h1 {
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 65px;
+        line-height: 103%;
+        color: #fff;
+      }
+
+      p {
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: 26px;
+        // width: 80%;
+        color: #fff;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .achievements {
+      width: 100%;
+      background: rgba(19, 67, 151, 0.7);
+      border-radius: 15px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 112px;
+      color: #fff;
+
+      li {
+        padding: 15px;
+        text-align: center;
+        strong {
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: 34px;
+        }
+        font-family: var(--third-family);
+        font-size: 30px;
+      }
+    }
+  }
+}

@@ -11,3 +11,9 @@ export interface PropsMenu {
     isOpen: boolean;
     onClose: () => void;
 }
+
+export interface TelegramButtonProps{
+    text: string | boolean;
+    onClick?: () => void;
+    size?: 'small' | 'medium' | 'large';
+}
