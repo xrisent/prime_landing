@@ -7,6 +7,14 @@
     height: 100%;
   }
 
+  &__box{
+    height: 100%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
   &Left {
     width: 684px;
     height: 100%;
