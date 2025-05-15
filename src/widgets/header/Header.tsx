@@ -6,10 +6,12 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { Burger } from '../burger/Burger'
 import { Language } from '../language/Language'
+import { useTranslations } from 'next-intl'
 
 export const Header: React.FC = () => {
 
     const navigation = useRouter()
+    const t = useTranslations('Header');
 
     return (
         <header className={`${styles.header} ${mobile.header}`}>
@@ -25,29 +27,25 @@ export const Header: React.FC = () => {
                       height={82}
                     />
 
-                    <nav className={`${styles.header__nav} ${mobile.header__nav}`}>
-                        <ul className={`${styles.header__ul} ${mobile.header__ul}`}>
-                            <li onClick={() => navigation.push("#")} className={`${styles.header__ul__li} ${mobile.header__ul__li}`}>О нас</li>
-                            <li onClick={() => navigation.push("#")} className={`${styles.header__ul__li} ${mobile.header__ul__li}`}>Услуги</li>
-                            <li onClick={() => navigation.push("#")} className={`${styles.header__ul__li} ${mobile.header__ul__li}`}>Блог</li>
-                            <li onClick={() => navigation.push("#")} className={`${styles.header__ul__li} ${mobile.header__ul__li}`}>FAQ</li>
-                            <li onClick={() => navigation.push("#")} className={`${styles.header__ul__li} ${mobile.header__ul__li}`}>Контакты</li>
-                        </ul> 
-                    </nav>
-
                     <div className={`${styles.header__right} ${mobile.header__right}`}>
                         <Language/>
                         <div className={`${styles.header__btn} ${mobile.header__btn}`}>
                             <Button
-                              text={'Оставить заявку'} 
+                              text={'+996507695369'} 
+                              onClick={() => console.log('Hi')}
+                              variant="number" 
+                              size="requestSize"
+                            />
+                            <Button
+                              text={t('btn2')} 
                               onClick={() => console.log('Hi')}
                               variant="request" 
                               size="requestSize"
                             />
                         </div>
-                        <div className={`${styles.header__burger} ${mobile.header__burger}`}>
+                        {/* <div className={`${styles.header__burger} ${mobile.header__burger}`}>
                             <Burger/>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>

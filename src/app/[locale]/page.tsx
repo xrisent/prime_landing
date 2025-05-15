@@ -1,12 +1,12 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import { useTranslations } from "next-intl";
+import { WorkUs } from "@/features/WorkUs/WorkUs";
 
 export default function Home() {
-  const t = useTranslations('piska');
   return (
-    <main>
-        <h1>{t('h1')}</h1>
+    <main className={styles.main}>
+        <WorkUs/>
     </main>
   );
 }
