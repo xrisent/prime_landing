@@ -44,4 +44,8 @@ export interface BusinessCardProps {
 export interface WayCardProps {
     number: string
     text: string
+
+export interface LogoProps {
+    onClick?: () => void;
+
 }

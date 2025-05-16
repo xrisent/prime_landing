@@ -13,6 +13,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
   email: initialEmail,
   number: initialNumber,
   message: initialMessage,
+  className,
 }) => {
   const t = useTranslations("FormHero");
   const [name, setName] = useState(initialName);
@@ -26,7 +27,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
   };
 
   return (
-    <form className='formHero' onSubmit={handleSubmit}>
+    <form className={`formHero ${className}`} onSubmit={handleSubmit}>
       <p className='formHero__description'>{pText}</p>
 
       <div className='formHero__formGroup'>
@@ -61,7 +62,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
         />
       </div>
 
-      <div className='formHero__formGroup'>
+      <div className='formHero__formGroup textareaFormGroup'>
         <textarea
           id="message"
           value={message}

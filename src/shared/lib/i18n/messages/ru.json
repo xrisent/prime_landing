@@ -23,5 +23,21 @@
     "number": "Номер телефона",
     "message": "Сообщение",
     "send": "Отправить"
+  },
+
+  "ContactUsFooter": {
+    "officeAddress": "Адрес офиса:",
+    "officeAddressText1": "Prime Setup Business",
+    "officeAddressText2": "Sheikh Zayed Road, Dubai, UAE",
+
+    "workingHours": "Рабочие часы:",
+    "workingHoursText1Line1": "С понедельника по пятницу c",
+    "workingHoursText1Line2": "8:30 до 17:30",
+    "workingHoursText2Line1": "Суббота",
+    "workingHoursText2Line2": "10:00 – 14:00",
+
+    "contactUs": "Свяжитесь с нами",
+
+    "formDescription": "Готовы открыть бизнес в ОАЭ?"
   }
 }
