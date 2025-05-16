@@ -17,12 +17,14 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({title, price, check1,
                 <li className={styles.card__item}>{check4}</li>
             </ul>
             
-            <Button
-              text={'Начать сейчас'} 
-              onClick={() => console.log('Hi')}
-              variant="start" 
-              size="startSize"
-            />
+            <div className={styles.card__btn}>
+                <Button
+                  text={'Начать сейчас'} 
+                  onClick={() => console.log('Hi')}
+                  variant="start" 
+                  size="startSize"
+                />
+            </div>
         </div>
     )
 }

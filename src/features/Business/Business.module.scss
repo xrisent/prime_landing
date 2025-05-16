@@ -14,8 +14,7 @@
             gap: 20px;
 
             .business__title {
-                font-family: "Gilroy";
-                font-weight: 600;
+                font-family: var(--second-family);
                 font-size: 46px;
                 line-height: 109%;
                 text-align: center;
@@ -23,8 +22,7 @@
             }
 
             .business__text {
-                font-family: "Gilroy";
-                font-weight: 500;
+                font-family: var(--third-family);
                 font-size: 24px;
                 line-height: 108%;
                 text-align: center;
@@ -34,7 +32,38 @@
 
         .business__items {
             display: flex;
-            column-gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+    }
+}
+
+
+@media (max-width: 500px) {
+    .business {
+        padding: 20px 0 30px;
+
+        &__box {
+        gap: 35px;
+
+            .business__up {
+                gap: 8px;
+    
+                .business__title {
+                    font-size: 24px;
+                    line-height: 108%;
+                }
+    
+                .business__text {
+                    font-size: 14px;
+                    line-height: 114%;
+                }
+            }
+    
+            .business__items {
+                gap: 30px;
+            }
         }
     }
 }

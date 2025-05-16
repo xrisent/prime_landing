@@ -1,5 +1,5 @@
 .work {
-    padding: 75px 0;
+    padding: 150px 0 75px;
 
     &__box {
         display: flex;
@@ -8,10 +8,11 @@
         gap: 60px;
 
         .work__title {
-            font-family: "Gilroy";
+            font-family: var(--second-family);
             font-weight: 600;
             font-size: 46px;
             line-height: 109%;
+            text-align: center;
             color: var(--zagol);
         }
 
@@ -21,6 +22,27 @@
             justify-content: center;
             gap: 50px 40px;
             padding-top: 20px;
+        }
+    }
+}
+
+
+@media (max-width: 500px) {
+    .work {
+        padding: 60px 0 30px;
+    
+        &__box {
+            gap: 40px;
+    
+            .work__title {
+                font-size: 24px;
+                line-height: 108%;
+            }
+    
+            .work__items {
+                gap: 20px;
+                padding-top: 5px;
+            }
         }
     }
 }

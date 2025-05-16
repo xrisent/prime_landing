@@ -24,6 +24,15 @@ export const QuestionsItem: React.FC<QuestionsItemProps> = ({question, answer}) 
                       animate={{ rotate: isOpen ? -180 : 0 }}
                       transition={{ duration: 0.2 }}
                     />
+                    <motion.img
+                      className={styles.item__arrow2}
+                      src='/assets/icons/Arrow2.svg'
+                      alt='Arrow'
+                      width={21}
+                      height={13}
+                      animate={{ rotate: isOpen ? -180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                    />
                 </div>
             </div>
 

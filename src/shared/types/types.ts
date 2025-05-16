@@ -12,6 +12,12 @@ export interface PropsMenu {
     onClose: () => void;
 }
 
+export interface TelegramButtonProps{
+    text: string | boolean;
+    onClick?: () => void;
+    size?: 'small' | 'medium' | 'large';
+}
+  
 export interface WorkItemProps {
     imgSrc: string
     imgAlt?: string
@@ -33,4 +39,9 @@ export interface BusinessCardProps {
     check2: string
     check3: string
     check4: string
+}
+
+export interface WayCardProps {
+    number: string
+    text: string
 }

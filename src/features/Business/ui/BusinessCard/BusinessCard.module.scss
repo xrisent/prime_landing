@@ -1,11 +1,10 @@
 .card {
-    padding: 49px 25px 0;
     background: #fff;
     border-left: 5px solid var(--osnov);
     border-right: 5px solid var(--osnov);
     border-radius: 30px;
     padding: 40px 25px;
-    width: 410px;
+    max-width: 410px;
     display: flex;
     flex-direction: column;
     gap: 25px;
@@ -18,8 +17,7 @@
         gap: 10px;
 
         .card__title {
-            font-family: "Gilroy";
-            font-weight: 600;
+            font-family: var(--second-family);
             font-size: 26px;
             letter-spacing: 0.01em;
             color: #000;
@@ -41,8 +39,7 @@
         padding-bottom: 15px;
 
         .card__item {
-            font-family: "Gilroy";
-            font-weight: 500;
+            font-family: var(--third-family);
             font-size: 20px;
             color: #000;
             position: relative;
@@ -58,6 +55,10 @@
             left: -49px;
         }
     }
+
+    .card__btn {
+        margin: 0 auto;
+    }
 }
 
 .card:hover {
@@ -68,5 +69,93 @@
     .card__price,
     .card__item {
         color: #fff;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+    .card {
+        width: 317px;
+        border-left: 3.88px solid var(--osnov);
+        border-right: 3.88px solid var(--osnov);
+        border-radius: 23px;
+        padding: 19px 36px;
+        gap: 19px;
+    
+        &__up {
+            gap: 7.75px;
+    
+            .card__title {
+                font-size: 20px;
+            }
+    
+            .card__price {
+                font-size: 23px;
+            }
+        }
+    
+        &__items {
+            gap: 15px;
+            padding-left: 30px;
+            padding-bottom: 12px;
+    
+            .card__item {
+                font-size: 15px;
+            }
+    
+            .card__item::after {
+                content: '';
+                position: absolute;
+                background-image: url(/assets/icons/BusinessCheckMobile.svg);
+                width: 23px;
+                height: 23px;
+                top: -2px;
+                left: -30px;
+            }
+        }
+
+        .card__btn {
+            margin: 0;
+        }
+    }
+}
+
+
+@media (max-width: 350px) {
+    .card {
+        width: 280px;
+        padding: 14px 20px;
+        gap: 15px;
+    
+        &__up {
+            gap: 6px;
+    
+            .card__title {
+                font-size: 19px;
+            }
+    
+            .card__price {
+                font-size: 21px;
+            }
+        }
+    
+        &__items {
+            padding-bottom: 10px;
+    
+            .card__item {
+                font-size: 14px;
+            }
+    
+            .card__item::after {
+                content: '';
+                position: absolute;
+                background-image: url(/assets/icons/BusinessCheckMobile.svg);
+                width: 23px;
+                height: 23px;
+                top: -2px;
+                left: -30px;
+            }
+        }
     }
 }
