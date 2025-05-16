@@ -1,7 +1,7 @@
 .formHero {
   border-radius: 30px;
-  width: 627px;
-  height: 733px;
+  width: 100%;
+  height: 100%;
   padding: 45px 40px;
   background: #fff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -9,13 +9,18 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  
+  &__formGroup{
+    width: 100%;
+    height: 9%;
+  }
 
   input {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 7px;
     padding: 15px 23px;
-    width: 547px;
-    height: 65px;
+    width: 100%;
+    height: 100%;
     background: #fbf3ec;
     font-family: var(--third-family);
     font-weight: 400;
@@ -30,12 +35,16 @@
     }
   }
 
+  .textareaFormGroup{
+    height: 24%;
+  }
+
   textarea {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 7px;
     padding: 23px 23px 15px 23px;
-    width: 547px;
-    height: 177px;
+    width: 100%;
+    height: 100%;
     background: #fbf3ec;
 
     font-family: var(--third-family);
@@ -59,19 +68,21 @@
   }
 
   .PhoneInput {
+    width: 100%;
+    height: 100%;
     .PhoneInputCountry {
       border: 1px solid rgba(0, 0, 0, 0.2);
       border-radius: 7px;
       padding: 10px;
-      width: 71px;
-      height: 65px;
+      width: 11%;
+      height: 100%;
       background: #fbf3ec;
     }
 
     input {
       padding: 15px 23px;
-      width: 476px;
-      height: 65px;
+      width: 89%;
+      height: 100%;
     }
   }
 
@@ -79,8 +90,8 @@
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    width: 396px;
-    height: 62px;
+    width: 63%;
+    height: 8.5%;
     background: var(--333);
     font-family: var(--font3);
     font-weight: 700;

@@ -4,4 +4,5 @@ export interface FormHeroProps {
   email: string;
   number?: string; // Просто string, не усложняем
   message: string;
+  className?: string;
 }
