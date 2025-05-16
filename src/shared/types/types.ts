@@ -1,8 +1,8 @@
 export interface ButtonProps {
     text: string | boolean;
     onClick?: () => void;
-    variant?: 'request' | 'number' | 'corner';
-    size?: 'requestSize' | 'requestSize' | 'cornerSize';
+    variant?: 'request' | 'number' | 'corner' | 'start';
+    size?: 'requestSize' | 'requestSize' | 'cornerSize' | 'startSize';
     disabled?: boolean;
     type?: 'button' | 'submit' | 'reset';
 }
@@ -27,6 +27,25 @@ export interface WorkItemProps {
     text: string
 }
 
+export interface QuestionsItemProps {
+    question: string
+    answer: string
+}
+
+export interface BusinessCardProps {
+    title: string
+    price: string
+    check1: string
+    check2: string
+    check3: string
+    check4: string
+}
+
+export interface WayCardProps {
+    number: string
+    text: string
+
 export interface LogoProps {
     onClick?: () => void;
+
 }
