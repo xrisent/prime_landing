@@ -7,7 +7,7 @@
     height: 100%;
   }
 
-  &__box{
+  &__box {
     height: 100%;
     display: flex;
     width: 100%;
@@ -75,5 +75,10 @@
         font-size: 30px;
       }
     }
+  }
+
+  &Right {
+    width: 43%;
+    height: 90%;
   }
 }

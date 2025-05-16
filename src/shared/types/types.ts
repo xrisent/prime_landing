@@ -26,3 +26,7 @@ export interface WorkItemProps {
     title: string
     text: string
 }
+
+export interface LogoProps {
+    onClick?: () => void;
+}
