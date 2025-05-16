@@ -1,0 +1,24 @@
+.mapSection {
+  height: 90vh;
+  background: var(--osnov);
+
+  .containerMap {
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__box {
+    height: 100%;
+    position: relative;
+    border: 3px solid rgba(0, 0, 0, 0.2);
+    border-radius: 30px;
+    width: 90%;
+    height: 90%;
+
+    iframe{
+        border-radius: 30px;
+    }
+  }
+}
