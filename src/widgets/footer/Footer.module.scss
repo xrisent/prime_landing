@@ -1,0 +1,34 @@
+.footer {
+  height: 10vh;
+  background: var(--osnov);
+
+  .containerFooter {
+    height: 100%;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px;
+    width: 100%;
+    height: 100%;
+
+    p {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 108%;
+      text-align: center;
+      color: #fff;
+    }
+  }
+
+  .line{
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background: #fff;
+
+  }
+}
