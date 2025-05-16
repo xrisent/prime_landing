@@ -48,6 +48,7 @@ body {
   flex-direction: column;
   font-family: "Roboto";
   background-color: #EEEEEE;
+  overflow-x: hidden;
 }
 
 a {

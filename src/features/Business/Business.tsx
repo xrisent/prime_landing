@@ -1,12 +1,14 @@
 import styles from './Business.module.scss'
 import { BusinessCard } from './ui/BusinessCard/BusinessCard'
+import { useTranslations } from 'next-intl'
 
 export const Business: React.FC = () => {
+    const t = useTranslations('Business');
 
     const business = [
-        {title:'Материковая компания', price: 'от 13 900 AED', check1: 'Доступ ко всему рынку ОАЭ', check2: '100% иностранное владение', check3: 'Аренда флекс-офиса включена', check4: 'Лицензия и юрадрес в пакете'},
-        {title:'Свободная зона', price: 'от 5 800 AED', check1: '100% владение', check2: 'Без налога на прибыль', check3: 'Регистрация от 3 дней', check4: 'Упрощённый документооборот'},
-        {title:'Оффшор', price: 'от 14 500 AED', check1: '0% налогов', check2: 'Без обязательств по офису', check3: 'Идеально для международного бизнеса', check4: 'Высокая конфиденциальность'},
+        {title: t("title1Business"), price: t("price1Business"), check1: t("check1Business1"), check2: t("check2Business1"), check3: t("check3Business1"), check4: t("check4Business1")},
+        {title: t("title2Business"), price: t("price2Business"), check1: t("check1Business2"), check2: t("check2Business2"), check3: t("check3Business2"), check4: t("check4Business2")},
+        {title: t("title3Business"), price: t("price3Business"), check1: t("check1Business3"), check2: t("check2Business3"), check3: t("check3Business3"), check4: t("check4Business3")},
     ] 
 
     return (
@@ -14,8 +16,8 @@ export const Business: React.FC = () => {
             <div className="container">
                 <div className={styles.business__box}>
                     <div className={styles.business__up}>
-                        <h2 className={styles.business__title}>Начните бизнес в ОАЭ с профессиональной поддержкой</h2>
-                        <p className={styles.business__text}>Простые и понятные пакеты для быстрого старта. Выбирайте и регистрируйтесь без лишней бюрократии.</p>
+                        <h2 className={styles.business__title}>{t("h2Business")}</h2>
+                        <p className={styles.business__text}>{t("pBusiness")}</p>
                     </div>
                     <div className={styles.business__items}>
                         {business.map((el,idx)=>(

@@ -13,14 +13,14 @@ import { ContactUs } from "@/features/СontactUs/ContactUs";
 export default function Home() {
   return (
     <main className={styles.main}>
-        <Hero />
+        {/* <Hero /> */}
         <WorkUs/>
         <Way/>
         <Business/>
         <Questions/>
         <Review/>
-        <ContactUs/>
-        <Map />
+        {/* <ContactUs/> */}
+        {/* <Map /> */}
     </main>
   );
 }

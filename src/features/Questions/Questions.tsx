@@ -1,22 +1,24 @@
 import styles from './Questions.module.scss'
 import { QuestionsItem } from './ui/QuestionsItem/QuestionsItem'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
+import { useTranslations } from 'next-intl'
 
 export const Questions: React.FC = () => {
+    const t = useTranslations('Questions');
 
     const questions = [
-        {question:'Сколько времени занимает регистрация компании?', answer:'Обычно требуются паспорт, фотографии, бизнес-план и заявление на регистрацию. В некоторых случаях могут понадобиться дополнительные документы'},
-        {question:'Можно ли открыть бизнес удалённо?', answer:'Обычно требуются паспорт, фотографии, бизнес-план и заявление на регистрацию. В некоторых случаях могут понадобиться дополнительные документы'},
-        {question:'Какие документы нужно предоставить?', answer:'Обычно требуются паспорт, фотографии, бизнес-план и заявление на регистрацию. В некоторых случаях могут понадобиться дополнительные документы'},
-        {question:'Чем отличается Mainland от Free Zone?', answer:'Обычно требуются паспорт, фотографии, бизнес-план и заявление на регистрацию. В некоторых случаях могут понадобиться дополнительные документы'},
-        {question:'Что входит в ваши услуги?', answer:'Обычно требуются паспорт, фотографии, бизнес-план и заявление на регистрацию. В некоторых случаях могут понадобиться дополнительные документы'},
+        {question: t("question1"), answer: t("answer1")},
+        {question: t("question2"), answer: t("answer2")},
+        {question: t("question3"), answer: t("answer3")},
+        {question: t("question4"), answer: t("answer4")},
+        {question: t("question5"), answer: t("answer5")},
     ]
 
     return (
         <section className={styles.questions}>
             <div className="container">
                 <div className={styles.questions__box}>
-                    <h2 className={styles.questions__title}>Часто задаваемые вопросы</h2>
+                    <h2 className={styles.questions__title}>{t("h2Questions")}</h2>
                     <div className={styles.questions__items}>
                         <AnimatePresence>
                             {questions.map((el,idx)=>(
