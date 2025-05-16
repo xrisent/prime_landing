@@ -37,5 +37,75 @@
     "contactUs": "Contact Us",
 
     "formDescription": "Ready to Start a Business in the UAE?"
+  },
+
+  "WorkUs": {
+    "h2Work": "Why is it worth working with us?",
+    "btnCorner": "Book a Consultation",
+    "title1": "Over 100 successful registrations",
+    "title2": "Transparent conditions",
+    "title3": "We accompany you at every stage",
+    "title4": "We operate strictly in accordance with the laws of the UAE",
+    "title5": "Integrated approach",
+    "text1": "We have helped entrepreneurs from 10+ countries start businesses in UAE.",
+    "text2": "We work under the contract, without hidden fees.",
+    "text3": "From idea - to licensing and launch.",
+    "text4": "All processes are compliant with local legal requirements.",
+    "text5": "Everything in one place: license, bank account, visas, accounting."
+  },
+
+  "Business": {
+    "h2Business": "Start Your Business in the UAE with Professional Support",
+    "pBusiness": "Clear and simple packages for a fast start. Choose your option and register without unnecessary bureaucracy.",
+    "title1Business": "Mainland Company",
+    "title2Business": "Free Zone",
+    "title3Business": "Offshore Company",
+    "price1Business": "from 13,900 AED",
+    "price2Business": "from 5,800 AED",
+    "price3Business": "from 14,500 AED",
+    "check1Business1": "Full access to the UAE market",
+    "check1Business2": "100% ownership",
+    "check1Business3": "0% taxes",
+    "check2Business1": "100% foreign ownership",
+    "check2Business2": "Tax optimization opportunities",
+    "check2Business3": "No office requirements",
+    "check3Business1": "Flex office rental included",
+    "check3Business2": "Registration from 3 days",
+    "check3Business3": "Ideal for international business",
+    "check4Business1": "License and legal address included",
+    "check4Business2": "Simplified paperwork",
+    "check4Business3": "High confidentiality"
+  },
+
+  "BusinessCard": {
+    "btnBusinessCard": "Start Now"
+  },
+
+  "Way": {
+    "h2Way": "A Simple Path to Business Registration",
+    "text1Way": "Consultation — we discuss your goals and choose the right business structure.",
+    "text2Way": "Plan and License — we choose between Free Zone, Mainland, or Offshore.",
+    "text3Way": " Document Preparation — we handle all the required paperwork.",
+    "text4Way": "Registration — we submit applications and manage the entire process.",
+    "text5Way": "Launch — we open a bank account, arrange visas, and support you further."
+  },
+
+  "Questions": {
+    "h2Questions": "Часто задаваемые вопросы",
+    "question1": "How long does it take to register a company?",
+    "question2": "Is it possible to start a business remotely?",
+    "question3": "What documents need to be submitted?",
+    "question4": "What is the difference between Mainland and Free Zone?",
+    "question5": "What is included in your services?",
+    "answer1": "Typically a passport, photographs, a business plan and an application for registration are required. In some cases, additional documents may be required",
+    "answer2": "Typically a passport, photographs, a business plan and an application for registration are required. In some cases, additional documents may be required",
+    "answer3": "Typically a passport, photographs, a business plan and an application for registration are required. In some cases, additional documents may be required",
+    "answer4": "Typically a passport, photographs, a business plan and an application for registration are required. In some cases, additional documents may be required",
+    "answer5": "Typically a passport, photographs, a business plan and an application for registration are required. In some cases, additional documents may be required"
+  },
+
+  "Review": {
+    "h2Review": "What Our Clients Say About Us",
+    "pReview": "Reviews from those who have already launched a business in the UAE with our help. Their experience is the best proof of the quality of our work."
   }
 }

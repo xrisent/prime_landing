@@ -2,22 +2,24 @@
 import { Button } from '@/shared/ui/Buttons/Button/Button'
 import { WorkItem } from './ui/WorkItem/WorkItem'
 import styles from './WorkUs.module.scss'
+import { useTranslations } from 'next-intl'
 
 export const WorkUs: React.FC = () => {
+    const t = useTranslations('WorkUs');
 
     const work = [
-        {img: '/assets/icons/Work1.svg', title: 'Более 100 успешных регистраций', text: 'Мы помогли предпринимателям из 10+ стран открыть бизнес в ОАЭ.'},
-        {img: '/assets/icons/Work2.svg', title: 'Прозрачные условия', text: 'Работаем по договору, без скрытых платежей.'},
-        {img: '/assets/icons/Work3.svg', title: ' Сопровождаем на каждом этапе', text: 'От идеи — до получения лицензии и запуска.'},
-        {img: '/assets/icons/Work4.svg', title: 'Работаем строго по закону ОАЭ', text: 'Все процессы соответствуют требованиям местного законодательства.'},
-        {img: '/assets/icons/Work5.svg', title: 'Комплексный подход', text: 'Всё в одном месте: лицензия, банковский счёт, визы, бухгалтерия.'},
+        {img: '/assets/icons/Work1.svg', title: t("title1"), text: t("text1")},
+        {img: '/assets/icons/Work2.svg', title: t("title2"), text: t("text2")},
+        {img: '/assets/icons/Work3.svg', title: t("title3"), text: t("text3")},
+        {img: '/assets/icons/Work4.svg', title: t("title4"), text: t("text4")},
+        {img: '/assets/icons/Work5.svg', title: t("title5"), text: t("text5")},
     ]
 
     return (
         <section className={styles.work}>
             <div className="container">
                 <div className={styles.work__box}>
-                     <h2 className={styles.work__title}>Почему стоит работать с нами</h2>
+                     <h2 className={styles.work__title}>{t("h2Work")}</h2>
                      <div className={styles.work__items}>
                         {work.map((el,idx)=>(
                             <WorkItem
@@ -32,7 +34,7 @@ export const WorkUs: React.FC = () => {
                         ))}
                      </div>
                      <Button
-                       text={'Записаться на консультацию'} 
+                       text={t("btnCorner")} 
                        onClick={() => console.log('Hi')}
                        variant="corner" 
                        size="cornerSize"
