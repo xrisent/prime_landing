@@ -5,6 +5,30 @@ import { useTranslations } from 'next-intl'
 export const Review: React.FC = () => {
     const t = useTranslations('Review');
 
+    const reviews = [
+      {
+        id: 1,
+        title: t("titleReview1"),
+        text: t("textReview1"),
+        image: '/assets/images/AvatarSwiper.svg',
+        stars: 5,
+      },
+      {
+        id: 2,
+        title: t("titleReview2"),
+        text: t("textReview2"),
+        image: '/assets/images/AvatarSwiper.svg',
+        stars: 4,
+      },
+      {
+        id: 3,
+        title: t("titleReview3"),
+        text: t("textReview3"),
+        image: '/assets/images/AvatarSwiper.svg',
+        stars: 4,
+      },
+    ];
+
     return (
         <>
             <section className={styles.review}>
@@ -15,7 +39,7 @@ export const Review: React.FC = () => {
                             <p className={styles.review__text}>{t("pReview")}</p>
                         </div>
                         <div className={styles.review__swiper}>
-                            <ReviewSwiper/>
+                            <ReviewSwiper reviews={reviews} />
                         </div>
                     </div>
                 </div>

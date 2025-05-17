@@ -6,8 +6,9 @@ import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import styles from './ReviewSwiper.module.scss';
+import { ReviewSwiperProps } from '@/shared/types/types';
 
-export const ReviewSwiper: React.FC = () => {
+export const ReviewSwiper: React.FC<ReviewSwiperProps> = ({ reviews }) => {
   const paginationRef = useRef<HTMLDivElement | null>(null);
   const swiperRef = useRef<any>(null);
 
@@ -32,21 +33,21 @@ export const ReviewSwiper: React.FC = () => {
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         className={styles.my__swiper}
       >
-        {[1, 2, 3].map((_, index) => (
-          <SwiperSlide key={index}>
+        {reviews.map((review) => (
+          <SwiperSlide key={review.id}>
             <div className={styles.content__slide}>
               <div className={styles.content__up}>
                 <Image
                   className={styles.content__img}
                   alt="Swiper Avatar"
-                  src="/assets/images/AvatarSwiper.svg"
+                  src={review.image}
                   width={120}
                   height={120}
                 />
-                <h4 className={styles.content__title}>Анна Петрова, Москва</h4>
+                <h4 className={styles.content__title}>{review.title}</h4>
               </div>
               <div className={styles.content__stars}>
-                {[...Array(5)].map((_, i) => (
+                {[...Array(review.stars || 5)].map((_, i) => (
                   <Image
                     key={i}
                     className={styles.content__star}
@@ -59,7 +60,7 @@ export const ReviewSwiper: React.FC = () => {
               </div>
               <div className={styles.content__review}>
                 <p className={styles.content__text}>
-                  «Я долго искала компанию, которая поможет открыть бизнес в ОАЭ без стресса — и нашла! Меня сопровождали на каждом этапе, отвечали на все вопросы, помогли с оформлением документов и регистрацией. Через 5 дней я уже получила лицензию. Честно — это лучшая инвестиция в своё дело!»
+                  {review.text}
                 </p>
               </div>
             </div>

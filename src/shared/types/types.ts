@@ -44,8 +44,20 @@ export interface BusinessCardProps {
 export interface WayCardProps {
     number: string
     text: string
+}
 
 export interface LogoProps {
     onClick?: () => void;
+}
 
+interface Review {
+  id: number;
+  title: string;
+  text: string;
+  image: string;
+  stars?: number;
+}
+
+export interface ReviewSwiperProps {
+  reviews: Review[];
 }
