@@ -106,6 +106,12 @@
 
   "Review": {
     "h2Review": "What Our Clients Say About Us",
-    "pReview": "Reviews from those who have already launched a business in the UAE with our help. Their experience is the best proof of the quality of our work."
+    "pReview": "Reviews from those who have already launched a business in the UAE with our help. Their experience is the best proof of the quality of our work.",
+    "titleReview1": "Anna Petrova, Moscow",
+    "titleReview2": "Anna Petrova, Moscow",
+    "titleReview3": "Anna Petrova, Moscow",
+    "textReview1": "«I had been looking for a company that could help me start a business in the UAE without stress — and I found it! I was guided through every step, all my questions were answered, and I got help with document preparation and registration. Within 5 days, I already had my license. Honestly — this is the best investment I’ve made in my business!»",
+    "textReview2": "«I had been looking for a company that could help me start a business in the UAE without stress — and I found it! I was guided through every step, all my questions were answered, and I got help with document preparation and registration. Within 5 days, I already had my license. Honestly — this is the best investment I’ve made in my business!»",
+    "textReview3": "«I had been looking for a company that could help me start a business in the UAE without stress — and I found it! I was guided through every step, all my questions were answered, and I got help with document preparation and registration. Within 5 days, I already had my license. Honestly — this is the best investment I’ve made in my business!»"
   }
 }
