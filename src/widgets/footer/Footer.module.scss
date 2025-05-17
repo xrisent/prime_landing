@@ -1,6 +1,7 @@
 .footer {
   height: 10vh;
   background: var(--osnov);
+  position: relative;
 
   .containerFooter {
     height: 100%;
@@ -28,4 +29,28 @@
     border-radius: 5px;
     background: #fff;
   }
+}
+
+
+.footerBg{
+  background: url('/assets/images/FooterSvg.svg') center/contain no-repeat;
+  z-index: -10;
+  background-position-y: 20px;
+  position: absolute;
+  height: 190vh;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+@media screen and (max-width:1010px) {
+  .footerBg{
+    height: 281vh;
+}
+}
+
+@media screen and (max-width:900px) {
+  .footerBg{
+    height: 250vh;
+}
 }

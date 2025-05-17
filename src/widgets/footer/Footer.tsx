@@ -10,6 +10,7 @@ export const Footer: React.FC = () => {
                     <p>2025 PRIME SETUP. All rights reserved</p>
                 </div>
             </div>
+            <div className={styles.footerBg}></div>
         </footer>
     )
 };

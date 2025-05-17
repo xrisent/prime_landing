@@ -46,7 +46,6 @@ export const metadata: Metadata = {
     images: ['/og-image.jpg'],
   },
   metadataBase: new URL('https://primelanding.com'),
-  themeColor: '#ffffff',
 };
 
 

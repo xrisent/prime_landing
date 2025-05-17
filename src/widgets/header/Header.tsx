@@ -4,7 +4,6 @@ import styles from './Header.module.scss'
 import mobile from './HeaderMobile.module.scss'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { Burger } from '../burger/Burger'
 import { Language } from '../language/Language'
 import { useTranslations } from 'next-intl'
 
