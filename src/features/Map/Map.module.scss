@@ -17,8 +17,24 @@
     width: 90%;
     height: 90%;
 
-    iframe{
-        border-radius: 30px;
+    iframe {
+      border-radius: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .mapSection {
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .mapSection {
+    height: 50vh;
+    &__box {
+      width: 100%;
+      
     }
   }
 }

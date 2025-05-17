@@ -11,12 +11,12 @@ export const Map: React.FC<{}> = () => {
             width="100%"
             height="100%"
             frameBorder="0"
-            scrolling="no"
-            marginHeight={0}
-            marginWidth={0}
+            style={{ border: 0 }}
+            referrerPolicy="no-referrer-when-downgrade"
             src="https://maps.google.com/maps?width=100%&height=400&hl=en&q=Metalabs%2C%20Bishkek%2C%20Kyrgyzstan&t=&z=18&ie=UTF8&iwloc=B&output=embed"
-          >
-          </iframe>
+            loading="lazy"
+            title="Google Maps location"
+          />
         </div>
       </div>
     </section>

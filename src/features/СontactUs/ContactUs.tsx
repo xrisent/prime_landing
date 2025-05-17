@@ -22,24 +22,8 @@ export const ContactUs: React.FC<{}> = () => {
               officeAddressText1={t("officeAddressText1")}
               officeAddressText2={t("officeAddressText2")}
               workingHours={t("workingHours")}
-              workingHoursText1={
-                !hasSplitWorkingHours1 ? t("workingHoursText1") : undefined
-              }
-              workingHoursText1Line1={
-                hasSplitWorkingHours1 ? t("workingHoursText1Line1") : undefined
-              }
-              workingHoursText1Line2={
-                hasSplitWorkingHours1 ? t("workingHoursText1Line2") : undefined
-              }
-              workingHoursText2={
-                !hasSplitWorkingHours2 ? t("workingHoursText2") : undefined
-              }
-              workingHoursText2Line1={
-                hasSplitWorkingHours2 ? t("workingHoursText2Line1") : undefined
-              }
-              workingHoursText2Line2={
-                hasSplitWorkingHours2 ? t("workingHoursText2Line2") : undefined
-              }
+              workingHoursText1={t('workingHoursText1')}
+              workingHoursText2={t('workingHoursText2')}
               contactUs={t("contactUs")}
             />
           </div>
