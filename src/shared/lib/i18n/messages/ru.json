@@ -31,10 +31,8 @@
     "officeAddressText2": "Sheikh Zayed Road, Dubai, UAE",
 
     "workingHours": "Рабочие часы:",
-    "workingHoursText1Line1": "С понедельника по пятницу c",
-    "workingHoursText1Line2": "8:30 до 17:30",
-    "workingHoursText2Line1": "Суббота",
-    "workingHoursText2Line2": "10:00 – 14:00",
+    "workingHoursText1": "С понедельника по пятницу — с 8:30 до 17:30",
+    "workingHoursText2": "Суббота — с 10:00 до 14:00",
 
     "contactUs": "Свяжитесь с нами",
 

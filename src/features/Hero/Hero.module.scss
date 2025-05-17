@@ -1,7 +1,7 @@
 .hero {
-  background: url("/assets/images/HeroBg.svg") center/cover no-repeat;
+  background: url("/assets/images/HeroBg.webp") center/cover no-repeat;
   height: 100vh;
-  padding-top: 277px;
+  padding-top: 23vh;
 
   .containerHero {
     height: 100%;
@@ -16,40 +16,39 @@
   }
 
   &Left {
-    width: 684px;
+    width: 47%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 10vh 0;
 
     &__text {
-      width: 684px;
-      height: 305px;
+      width: 100%;
+      height: 55%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      margin-bottom: 20px;
+      color: #fff;
+      gap: 5px;
 
       h1 {
         font-family: var(--second-family);
-        font-weight: 400;
-        font-size: 65px;
-        line-height: 103%;
-        color: #fff;
+        font-size: 3rem;
       }
 
       p {
         font-family: var(--third-family);
-        font-weight: 400;
-        font-size: 26px;
-        // width: 80%;
-        color: #fff;
+        font-size: 1.625rem;
       }
     }
 
     .buttons {
+      height: 20%;
       display: flex;
       width: 100%;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 100px;
     }
 
     .achievements {
@@ -60,7 +59,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 112px;
+      height: 20%;
       color: #fff;
 
       li {
@@ -69,10 +68,10 @@
         strong {
           font-family: var(--second-family);
           font-weight: 400;
-          font-size: 34px;
+          font-size: 1.6rem;
         }
         font-family: var(--third-family);
-        font-size: 30px;
+        font-size: 1.3rem;
       }
     }
   }
@@ -80,5 +79,122 @@
   &Right {
     width: 43%;
     height: 90%;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .buttons button {
+    font-size: 20px !important;
+    gap: 5px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hero {
+    height: 160vh;
+    padding-bottom: 30px;
+
+    &__box {
+      flex-direction: column;
+      align-items: center;
+    }
+    &Left {
+      width: 90%;
+      height: 40%;
+      padding: 0;
+
+      &__text {
+        height: 50%;
+      }
+
+      .buttons {
+        width: 70%;
+      }
+    }
+
+    &Right {
+      width: 90%;
+      height: 55%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero {
+    height: 180vh;
+    &Left {
+      height: 45%;
+
+      &__text {
+        height: 40%;
+      }
+      .buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        button {
+          width: fit-content;
+          justify-content: flex-start;
+          gap: 10px;
+        }
+      }
+    }
+
+    &Right {
+      height: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero {
+    padding-top: 15vh;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .hero {
+    &Left {
+      &__text {
+        h1 {
+          font-size: 2.4rem;
+        }
+
+        p {
+          font-size: 1.4rem;
+        }
+      }
+
+      .achievements {
+        li {
+          font-size: 1rem;
+          strong {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    &Right {
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .hero {
+    &Left {
+      &__text {
+        h1 {
+          font-size: 2.0rem;
+        }
+
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 }
