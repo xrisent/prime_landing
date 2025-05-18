@@ -2,6 +2,7 @@
 import { Button } from '@/shared/ui/Buttons/Button/Button'
 import { WorkItem } from './ui/WorkItem/WorkItem'
 import styles from './WorkUs.module.scss'
+import mobile from './WorkUsMobile.module.scss'
 import { useTranslations } from 'next-intl'
 
 export const WorkUs: React.FC = () => {
@@ -16,11 +17,11 @@ export const WorkUs: React.FC = () => {
     ]
 
     return (
-        <section className={styles.work}>
+        <section className={`${styles.work} ${mobile.work}`}>
             <div className="container">
-                <div className={styles.work__box}>
-                     <h2 className={styles.work__title}>{t("h2Work")}</h2>
-                     <div className={styles.work__items}>
+                <div className={`${styles.work__box} ${mobile.work__box}`}>
+                     <h2 className={`${styles.work__title} ${mobile.work__title}`}>{t("h2Work")}</h2>
+                     <div className={`${styles.work__items} ${mobile.work__items}`}>
                         {work.map((el,idx)=>(
                             <WorkItem
                                key={idx}

@@ -2,11 +2,11 @@
 import { useState } from "react";
 import PhoneInput from "react-phone-number-input";
 import "react-phone-number-input/style.css";
-import "./FormHero.scss";
+import "./FormFooter.scss";
 import { FormHeroProps } from "@/shared/types/types";
 import { useTranslations } from "next-intl";
 
-export const FormHero: React.FC<FormHeroProps> = ({
+export const FormFooter: React.FC<FormHeroProps> = ({
   pText,
   name: initialName,
   email: initialEmail,
@@ -14,7 +14,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
   message: initialMessage,
   className,
 }) => {
-  const t = useTranslations("FormHero");
+  const t = useTranslations("FormFooter");
   const [name, setName] = useState(initialName);
   const [email, setEmail] = useState(initialEmail);
   const [phone, setPhone] = useState<string | undefined>(initialNumber);
@@ -26,10 +26,10 @@ export const FormHero: React.FC<FormHeroProps> = ({
   };
 
   return (
-    <form className={`formHero ${className}`} onSubmit={handleSubmit}>
-      <p className='formHero__description'>{pText}</p>
+    <form className={`formFooter ${className}`} onSubmit={handleSubmit}>
+      <h3 className='formFooter__description'>{pText}</h3>
 
-      <div className='formHero__formGroup'>
+      <div className='formFooter__formGroup'>
         <input
           type="text"
           id="name"
@@ -40,7 +40,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
         />
       </div>
 
-      <div className='formHero__formGroup'>
+      <div className='formFooter__formGroup'>
         <input
           type="email"
           id="email"
@@ -51,17 +51,16 @@ export const FormHero: React.FC<FormHeroProps> = ({
         />
       </div>
 
-      <div className='formHero__formGroup'>
+      <div className='formFooter__formGroup'>
         <PhoneInput
           international
-          //   defaultCountry="KG"
           value={phone}
           onChange={setPhone}
           placeholder={t("number")}
         />
       </div>
 
-      <div className='formHero__formGroup textareaFormGroup'>
+      <div className='formFooter__formGroup textareaFormGroup'>
         <textarea
           id="message"
           value={message}
@@ -71,7 +70,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
         />
       </div>
 
-      <button type="submit" className='formHero__button'>
+      <button type="submit" className='formFooter__button'>
         {t("send")}
       </button>
     </form>

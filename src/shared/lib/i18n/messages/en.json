@@ -25,18 +25,26 @@
     "send": "Send"
   },
 
-  "ContactUsFooter":{
+  "FormFooter": {
+    "name": "Name",
+    "email": "E-mail address",
+    "number": "Phone number",
+    "message": "Message",
+    "send": "Send"
+  },
+
+  "ContactUs":{
+    "officeAddressMobileUP": "Comprehensive solutions for registering and supporting businesses in the UAE.",
     "officeAddress": "Office Address:",
-    "officeAddressText1": "Prime Setup Business",
-    "officeAddressText2": "Sheikh Zayed Road, Dubai, UAE",
+    "officeAddressText1": "Prime Setup Business Sheikh Zayed Road, Dubai, UAE",
 
     "workingHours": "Working Hours:",
-    "workingHoursText1": "Monday to Friday — 8:30 AM to 5:30 PM",
-    "workingHoursText2": "Saturday — 10:00 AM to 2:00 PM",
+    "workingHoursText1": "Monday to Friday — 8:30 AM to 5:30 PM Saturday — 10:00 AM to 2:00 PM",
 
     "contactUs": "Contact Us",
 
-    "formDescription": "Ready to Start a Business in the UAE?"
+    "formDescription": "Ready to Start a Business in the UAE?",
+    "footerProtection": "2025 PRIME SETUP. All rights reserved"
   },
 
   "WorkUs": {

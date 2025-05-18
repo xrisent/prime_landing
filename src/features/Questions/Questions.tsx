@@ -1,6 +1,6 @@
 import styles from './Questions.module.scss'
+import mobile from './QuestionsMobile.module.scss'
 import { QuestionsItem } from './ui/QuestionsItem/QuestionsItem'
-import { AnimatePresence } from 'framer-motion'
 import { useTranslations } from 'next-intl'
 
 export const Questions: React.FC = () => {
@@ -15,12 +15,11 @@ export const Questions: React.FC = () => {
     ]
 
     return (
-        <section className={styles.questions}>
+        <section className={`${styles.questions} ${mobile.questions}`}>
             <div className="container">
-                <div className={styles.questions__box}>
-                    <h2 className={styles.questions__title}>{t("h2Questions")}</h2>
-                    <div className={styles.questions__items}>
-                        <AnimatePresence>
+                <div className={`${styles.questions__box} ${mobile.questions__box}`}>
+                    <h2 className={`${styles.questions__title} ${mobile.questions__title}`}>{t("h2Questions")}</h2>
+                    <div className={`${styles.questions__items} ${mobile.questions__items}`}>
                             {questions.map((el,idx)=>(
                                 <QuestionsItem
                                   key={idx}
@@ -28,7 +27,6 @@ export const Questions: React.FC = () => {
                                   answer={el.answer}
                                 />
                             ))}
-                        </AnimatePresence>
                     </div>
                 </div>
             </div>
