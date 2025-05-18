@@ -1,4 +1,5 @@
 import styles from './Business.module.scss'
+import mobile from './BusinessMobile.module.scss'
 import { BusinessCard } from './ui/BusinessCard/BusinessCard'
 import { useTranslations } from 'next-intl'
 
@@ -12,14 +13,14 @@ export const Business: React.FC = () => {
     ] 
 
     return (
-        <section className={styles.business}>
+        <section className={`${styles.business} ${mobile.business}`}>
             <div className="container">
-                <div className={styles.business__box}>
-                    <div className={styles.business__up}>
-                        <h2 className={styles.business__title}>{t("h2Business")}</h2>
-                        <p className={styles.business__text}>{t("pBusiness")}</p>
+                <div className={`${styles.business__box} ${mobile.business__box}`}>
+                    <div className={`${styles.business__up} ${mobile.business__up}`}>
+                        <h2 className={`${styles.business__title} ${mobile.business__title}`}>{t("h2Business")}</h2>
+                        <p className={`${styles.business__text} ${mobile.business__text}`}>{t("pBusiness")}</p>
                     </div>
-                    <div className={styles.business__items}>
+                    <div className={`${styles.business__items} ${mobile.business__items}`}>
                         {business.map((el,idx)=>(
                             <BusinessCard
                                key={idx}

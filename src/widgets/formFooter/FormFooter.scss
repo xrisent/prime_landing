@@ -1,10 +1,6 @@
-.formHero {
-  border-radius: 30px;
-  width: 100%;
-  height: 100%;
-  padding: 2.6rem 2.3rem;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+.formFooter {
+  width: 547px;
+  height: 688px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,10 +40,11 @@
     resize: none;
   }
 
-  p {
+  h3 {
     font-family: var(--second-family);
-    font-size: 1.625rem;
-    color: var(--zagol);
+    font-weight: 400;
+    font-size: 46px;
+    color: #fff;
   }
 
   .PhoneInput {
@@ -63,7 +60,7 @@
     }
   }
 
-  .formHero__button {
+  &__button {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
@@ -80,7 +77,7 @@
     cursor: pointer;
   }
 
-  .formHero__button::before {
+  &__button::before {
     content: "";
     position: absolute;
     top: 0;
@@ -92,18 +89,54 @@
     transition: width 0.5s ease;
   }
 
-  .formHero__button:hover::before {
+  &__button:hover::before {
     width: 100%;
   }
 }
 
-@media screen and (max-width: 700px) {
-  .formHero {
-    padding: 1.6rem 1.3rem;
+@media screen and (max-width: 500px) {
+  .formFooter {
+    padding: 1.6rem 0 0;
+    height: 349px;
+
+    input {
+      font-size: 12px;
+      line-height: 100%;
+      padding: 11px 12px;
+      border-radius: 4px;
+    }
+
+    textarea {
+      font-size: 12px;
+      line-height: 100%;
+      padding: 12.11px;
+      border-radius: 4px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      font-size: 12px;
+      line-height: 100%;
+    }
+
+    h3 {
+      font-size: 18px;
+      line-height: 111%;
+    }
     .PhoneInput {
       .PhoneInputCountry {
         width: 20%;
+        border-radius: 4px;
       }
+    }
+
+    &__button {
+      border-radius: 5px;
+      width: 208px;
+      height: 38px;
+      font-size: 16px;
+      line-height: 100%;
+      margin-top: 17px;
     }
   }
 }

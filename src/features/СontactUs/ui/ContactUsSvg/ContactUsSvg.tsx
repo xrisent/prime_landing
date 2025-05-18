@@ -1,11 +1,10 @@
-import styles from '../ContactUs.module.scss'
+import styles from './ContactUsSvg.module.scss'
 
 export const ContactUsSvg: React.FC<{}> = () => {
   return (
     <div className={styles.contactUsImages}>
       <svg
-        width="50"
-        height="50"
+        className={styles.icon}
         viewBox="0 0 50 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +19,7 @@ export const ContactUsSvg: React.FC<{}> = () => {
         />
       </svg>
       <svg
-        width="50"
-        height="50"
+        className={styles.icon}
         viewBox="0 0 50 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -36,8 +34,7 @@ export const ContactUsSvg: React.FC<{}> = () => {
         />
       </svg>
       <svg
-        width="50"
-        height="50"
+        className={styles.icon}
         viewBox="0 0 50 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -60,8 +57,7 @@ export const ContactUsSvg: React.FC<{}> = () => {
         />
       </svg>
       <svg
-        width="50"
-        height="50"
+        className={styles.icon}
         viewBox="0 0 50 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -84,8 +80,7 @@ export const ContactUsSvg: React.FC<{}> = () => {
         />
       </svg>
       <svg
-        width="50"
-        height="50"
+        className={styles.icon}
         viewBox="0 0 50 50"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"

@@ -61,3 +61,13 @@ interface Review {
 export interface ReviewSwiperProps {
   reviews: Review[];
 }
+
+
+export interface FormHeroProps {
+  pText: string;
+  name: string;
+  email: string;
+  number?: string;
+  message: string;
+  className?: string;
+}

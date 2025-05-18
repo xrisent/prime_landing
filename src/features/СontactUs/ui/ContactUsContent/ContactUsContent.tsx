@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../ContactUs.module.scss";
-import { ContactUsContentProps } from "../types/types";
-import { ContactUsSvg } from "./ContactUsSvg";
+import { ContactUsContentProps } from "../../types/types";
+import { ContactUsSvg } from "../ContactUsSvg/ContactUsSvg";
 
 export const ContactUsContent: React.FC<ContactUsContentProps> = ({
   officeAddress,
