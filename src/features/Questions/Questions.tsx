@@ -1,6 +1,6 @@
 import styles from './Questions.module.scss'
 import mobile from './QuestionsMobile.module.scss'
-import { QuestionsItem } from './ui/QuestionsItem/QuestionsItem'
+import { LazyQuestionsItem } from './ui/LazyQuestionsItem/LazyQuestionsItem'
 import { useTranslations } from 'next-intl'
 
 export const Questions: React.FC = () => {
@@ -21,7 +21,7 @@ export const Questions: React.FC = () => {
                     <h2 className={`${styles.questions__title} ${mobile.questions__title}`}>{t("h2Questions")}</h2>
                     <div className={`${styles.questions__items} ${mobile.questions__items}`}>
                             {questions.map((el,idx)=>(
-                                <QuestionsItem
+                                <LazyQuestionsItem
                                   key={idx}
                                   question={el.question}
                                   answer={el.answer}

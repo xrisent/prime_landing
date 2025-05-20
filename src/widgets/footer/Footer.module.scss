@@ -94,7 +94,11 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 25px;
-      
+
+                .footer__line {
+                  border: 2px solid #fff;
+                  border-radius: 2px;
+                }
       
                 .footer__protection {
                   font-size: 14px;

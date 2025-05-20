@@ -1,5 +1,6 @@
 import styles from './Review.module.scss'
-import { ReviewSwiper } from './ui/ReviewSwiper/ReviewSwiper'
+import mobile from './ReviewMobile.module.scss'
+import { LazyReviewSwiper } from './ui/LazyReviewSwiper/LazyReviewSwiper'
 import { useTranslations } from 'next-intl'
 
 export const Review: React.FC = () => {
@@ -31,21 +32,21 @@ export const Review: React.FC = () => {
 
     return (
         <>
-            <section className={styles.review}>
+            <section className={`${styles.review} ${mobile.review}`}>
                 <div className="container">
-                    <div className={styles.review__box}>
-                        <div className={styles.review__up}>
-                            <h2 className={styles.review__title}>{t("h2Review")}</h2>
-                            <p className={styles.review__text}>{t("pReview")}</p>
+                    <div className={`${styles.review__box} ${mobile.review__box}`}>
+                        <div className={`${styles.review__up} ${mobile.review__up}`}>
+                            <h2 className={`${styles.review__title} ${mobile.review__title}`}>{t("h2Review")}</h2>
+                            <p className={`${styles.review__text} ${mobile.review__text}`}>{t("pReview")}</p>
                         </div>
-                        <div className={styles.review__swiper}>
-                            <ReviewSwiper reviews={reviews} />
+                        <div className={`${styles.review__swiper} ${mobile.review__swiper}`}>
+                            <LazyReviewSwiper reviews={reviews} />
                         </div>
                     </div>
                 </div>
             </section>
-            <div className={styles.review__bar__box}>
-                <div className={styles.review__bar}/>
+            <div className={`${styles.review__bar__box} ${mobile.review__bar__box}`}>
+                <div className={`${styles.review__bar} ${mobile.review__bar}`}/>
             </div>
         </>
     )

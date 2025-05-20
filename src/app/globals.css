@@ -2,6 +2,7 @@
   font-family: "Roboto";
   src: url('/assets/fonts/Roboto/Roboto-Regular.ttf') format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 @font-face {
@@ -66,7 +67,7 @@ button {
 }
 
 
-@media (max-width: 1300px) {
+@media (max-width: 1360px) {
   .container{
       width: 95%;
   }

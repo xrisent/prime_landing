@@ -1,4 +1,3 @@
-'use client'
 import styles from './Map.module.scss';
 
 export const Map: React.FC<{}> = () => {

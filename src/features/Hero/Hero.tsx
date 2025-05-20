@@ -1,24 +1,37 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import styles from "./Hero.module.scss";
+import mobile from "./HeroMobile.module.scss";
 import { HeroText } from "./ui/HeroText/HeroText";
-import { TelegramButton } from "@/shared/ui/Buttons/TelegramButton/TelegramButton";
-import { WhatsappButton } from "@/shared/ui/Buttons/WhatsappButton/WhatsappButton";
 import { Achievements } from "./ui/Achievements/Achievements";
 import { FormHero } from "@/widgets/formHero/FormHero";
+import { HeroButtons } from "./ui/HeroButtons/HeroButtons";
+import Image from "next/image";
 
-export const Hero: React.FC = () => {
-  const t = useTranslations("Hero");
+export const Hero: React.FC = async () => {
+  const t = await getTranslations("Hero");
 
   return (
-    <section className={styles.hero}>
-      <div className={`container ${styles.containerHero}`}>
-        <div className={styles.hero__box}>
-          <div className={styles.heroLeft}>
-            <HeroText h1Text={t("h1")} pText={t("p")} />
-            <div className={styles.buttons}>
-              <TelegramButton size="medium" text={t("telegram")} />
-              <WhatsappButton size="medium" text={t("whatsapp")} />
+    <section className={`${styles.hero} ${mobile.hero}`}>
+      <div className={`${styles.hero__bg} ${mobile.hero__bg}`}>
+        <Image
+          src="/assets/images/HeroBg.webp"
+          alt="Hero Background"
+          fill
+          priority
+          quality={80}
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+      <div className="container">
+        <div className={`${styles.hero__box} ${mobile.hero__box}`}>
+          <div className={`${styles.heroLeft} ${mobile.heroLeft}`}>
+            <div className={`${styles.hero__box__text} ${mobile.hero__box__text}`}>
+              <HeroText h1Text={t("h1")} pText={t("p")} />
             </div>
+            <HeroButtons
+              telegramText={t("telegram")}
+              whatsappText={t("whatsapp")}
+            />
             <Achievements
               li1First={t("li1First")}
               li1Second={t("li1Second")}
@@ -28,7 +41,7 @@ export const Hero: React.FC = () => {
               li3Second={t("li3Second")}
             />
           </div>
-          <div className={styles.heroRight}>
+          <div className={`${styles.heroRight} ${mobile.heroRight}`}>
             <FormHero
               pText={t("formDescription")}
               name=""
