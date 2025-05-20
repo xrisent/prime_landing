@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/shared/lib/i18n/routing";
 
 export const metadata: Metadata = {
-  title: 'Prime Setup Landing',
+  title: 'Prime Setup',
   description: 'Платформа для быстрого запуска вашего бизнеса в ОАЭ.',
   keywords: ['бизнес в ОАЭ', 'открытие компании', 'Prime Landing', 'эмираты', 'регистрация бизнеса'],
   authors: [{ name: 'Prime Landing Team', url: 'https://primelanding.com' }],

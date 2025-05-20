@@ -8,9 +8,9 @@ import { useTranslations } from "next-intl";
 
 const PhoneInput = dynamic(
   () => import("react-phone-number-input").then((mod) => mod.default),
-  { 
+  {
     ssr: false,
-    loading: () => <input type="tel" placeholder="Loading phone input..." />
+    loading: () => <input type="tel" placeholder="Loading phone input..." />,
   }
 );
 
@@ -29,33 +29,68 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
   const [message, setMessage] = useState(initialMessage);
   const [error, setError] = useState("");
 
-  // Мемоизация обработчиков событий
-  const handleNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  }, []);
+  const handleNameChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setName(e.target.value);
+    },
+    []
+  );
 
-  const handleEmailChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  }, []);
+  const handleEmailChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setEmail(e.target.value);
+    },
+    []
+  );
 
   const handlePhoneChange = useCallback((value?: string) => {
     setPhone(value);
   }, []);
 
-  const handleMessageChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
-  }, []);
+  const handleMessageChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setMessage(e.target.value);
+    },
+    []
+  );
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    // Логика  формы
-  }, []);
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+
+      try {
+        const response = await fetch("/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            message,
+          }),
+        });
+
+        if (!response.ok) throw new Error("Failed to send email");
+
+        alert("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    },
+    [name, email, phone, message]
+  );
 
   return (
     <form className={`formHero ${className}`} onSubmit={handleSubmit}>
-      <p className='formHero__description'>{pText}</p>
+      <p className="formHero__description">{pText}</p>
 
-      <div className='formHero__formGroup'>
+      <div className="formHero__formGroup">
         <input
           type="text"
           id="name"
@@ -66,7 +101,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
         />
       </div>
 
-      <div className='formHero__formGroup'>
+      <div className="formHero__formGroup">
         <input
           type="email"
           id="email"
@@ -77,7 +112,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
         />
       </div>
 
-      <div className='formHero__formGroup'>
+      <div className="formHero__formGroup">
         <PhoneInput
           international
           value={phone}
@@ -86,7 +121,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
         />
       </div>
 
-      <div className='formHero__formGroup textareaFormGroup'>
+      <div className="formHero__formGroup textareaFormGroup">
         <textarea
           id="message"
           value={message}
@@ -96,7 +131,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
         />
       </div>
 
-      <button type="submit" className='formHero__button'>
+      <button type="submit" className="formHero__button">
         {t("send")}
       </button>
     </form>
