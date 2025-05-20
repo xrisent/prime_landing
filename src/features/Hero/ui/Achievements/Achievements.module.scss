@@ -1,0 +1,41 @@
+.achievements {
+      width: 100%;
+      background: rgba(19, 67, 151, 0.7);
+      border-radius: 15px;
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 20%;
+      color: #fff;
+
+      li {
+        text-align: center;
+        font-family: var(--third-family);
+        font-size: 30px;
+
+        strong {
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: 34px;
+          line-height: 88%;
+        }
+    }
+}
+
+
+@media (max-width: 500px) {
+    .achievements {
+        padding: 20px;
+        margin-top: 20px;
+    
+        li {
+            font-size: 15px;
+  
+            strong {
+                font-size: 18px;
+                line-height: 89%;
+            }
+        }
+    }
+}

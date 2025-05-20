@@ -1,5 +1,5 @@
-import styles from "../../Hero.module.scss";
-import { HeroTextProps } from "../../types/types";
+import styles from "./HeroText.module.scss";
+import { HeroTextProps } from "@/shared/types/types";
 
 export const HeroText: React.FC<HeroTextProps> = ({ h1Text, pText }) => {
   return (

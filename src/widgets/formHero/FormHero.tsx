@@ -1,19 +1,27 @@
 "use client";
-import { useState } from "react";
-import PhoneInput from "react-phone-number-input";
+import { useState, useCallback, memo } from "react";
+import dynamic from "next/dynamic";
 import "react-phone-number-input/style.css";
 import "./FormHero.scss";
 import { FormHeroProps } from "@/shared/types/types";
 import { useTranslations } from "next-intl";
 
-export const FormHero: React.FC<FormHeroProps> = ({
+const PhoneInput = dynamic(
+  () => import("react-phone-number-input").then((mod) => mod.default),
+  { 
+    ssr: false,
+    loading: () => <input type="tel" placeholder="Loading phone input..." />
+  }
+);
+
+export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
   pText,
   name: initialName,
   email: initialEmail,
   number: initialNumber,
   message: initialMessage,
   className,
-}) => {
+}) {
   const t = useTranslations("FormHero");
   const [name, setName] = useState(initialName);
   const [email, setEmail] = useState(initialEmail);
@@ -21,9 +29,27 @@ export const FormHero: React.FC<FormHeroProps> = ({
   const [message, setMessage] = useState(initialMessage);
   const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Мемоизация обработчиков событий
+  const handleNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value);
+  }, []);
+
+  const handleEmailChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  }, []);
+
+  const handlePhoneChange = useCallback((value?: string) => {
+    setPhone(value);
+  }, []);
+
+  const handleMessageChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value);
+  }, []);
+
+  const handleSubmit = useCallback((e: React.FormEvent) => {
     e.preventDefault();
-  };
+    // Логика  формы
+  }, []);
 
   return (
     <form className={`formHero ${className}`} onSubmit={handleSubmit}>
@@ -35,7 +61,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
           id="name"
           placeholder={t("name")}
           value={name}
-          onChange={(e) => setName(e.target.value)}
+          onChange={handleNameChange}
           required
         />
       </div>
@@ -46,7 +72,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
           id="email"
           placeholder={t("email")}
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmailChange}
           required
         />
       </div>
@@ -54,9 +80,8 @@ export const FormHero: React.FC<FormHeroProps> = ({
       <div className='formHero__formGroup'>
         <PhoneInput
           international
-          //   defaultCountry="KG"
           value={phone}
-          onChange={setPhone}
+          onChange={handlePhoneChange}
           placeholder={t("number")}
         />
       </div>
@@ -66,7 +91,7 @@ export const FormHero: React.FC<FormHeroProps> = ({
           id="message"
           value={message}
           placeholder={t("message")}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={handleMessageChange}
           rows={4}
         />
       </div>
@@ -76,4 +101,4 @@ export const FormHero: React.FC<FormHeroProps> = ({
       </button>
     </form>
   );
-};
+});

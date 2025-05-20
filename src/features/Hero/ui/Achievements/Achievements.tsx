@@ -1,5 +1,5 @@
-import styles from "../../Hero.module.scss";
-import { AchievementsProps } from "../../types/types";
+import styles from "./Achievements.module.scss";
+import { AchievementsProps } from "@/shared/types/types";
 
 export const Achievements: React.FC<AchievementsProps> = ({
   li1First,
@@ -9,23 +9,21 @@ export const Achievements: React.FC<AchievementsProps> = ({
   li3First,
   li3Second,
 }) => {
+  const items = [
+    { first: li1First, second: li1Second },
+    { first: li2First, second: li2Second },
+    { first: li3First, second: li3Second }
+  ];
+
   return (
     <ul className={styles.achievements}>
-      <li>
-        <strong>{li1First}</strong>
-        <br />
-        {li1Second}
-      </li>
-      <li>
-        <strong>{li2First}</strong>
-        <br />
-        {li2Second}
-      </li>
-      <li>
-        {li3First}
-        <br />
-        {li3Second}
-      </li>
+      {items.map((el, idx) => (
+        <li key={idx}>
+          <strong>{el.first}</strong>
+          <br />
+          {el.second}
+        </li>
+      ))}
     </ul>
   );
 };

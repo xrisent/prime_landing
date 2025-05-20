@@ -8,6 +8,105 @@
 
 
 
+.Button.telega {
+    background: #25a5e4;
+    color: #fff;
+    position: relative;
+}
+
+Button.telega:hover {
+   background: #146c97;
+}
+
+.Button.telegaSize {
+    padding: 15px 20px 15px 69px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.Button.telega::after {
+    content: '';
+    position: absolute;
+    background-image: url(/assets/icons/Telegram.svg);
+    width: 30px;
+    height: 30px;
+    top: 14px;
+    left: 22px;
+}
+
+@media (max-width: 500px) {
+    .Button.telegaSize {
+        border-radius: 5px;
+        padding: 9.5px 14px 9.5px 43px;
+        font-size: 16px;
+        max-width: 178px;
+    }
+
+    .Button.telega::after {
+        content: '';
+        position: absolute;
+        background-image: url(/assets/icons/TelegramMobile.svg);
+        width: 24px;
+        height: 24px;
+        top: 7px;
+        left: 15px;
+    }
+}
+
+
+
+
+.Button.whatsApp {
+    background: #22b832;
+    color: #fff;
+    position: relative;
+}
+
+Button.whatsApp:hover {
+    background: #086b13;
+}
+
+.Button.whatsAppSize {
+    padding: 15px 20px 15px 69px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.Button.whatsApp::after {
+    content: '';
+    position: absolute;
+    background-image: url(/assets/icons/Whatsapp.svg);
+    width: 30px;
+    height: 30px;
+    top: 14px;
+    left: 22px;
+}
+
+@media (max-width: 500px) {
+    .Button.whatsAppSize {
+        border-radius: 5px;
+        padding: 9.5px 14px 9.5px 43px;
+        font-size: 16px;
+        max-width: 225px;
+    }
+
+    .Button.whatsApp::after {
+        content: '';
+        position: absolute;
+        background-image: url(/assets/icons/WhatsappMobile.svg);
+        width: 24px;
+        height: 24px;
+        top: 7px;
+        left: 15px;
+    }
+}
+
+
+
+
+
 
 .Button.corner {
     position: relative;

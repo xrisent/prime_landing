@@ -1,217 +1,40 @@
 .hero {
-  background: url("/assets/images/HeroBg.webp") center/cover no-repeat;
-  height: 100vh;
-  padding-top: 23vh;
+    position: relative;
+    height: 1042px;
+    padding-top: 31vh;
 
-  .containerHero {
-    height: 100%;
-  }
-
-  &__box {
-    height: 100%;
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-
-  &Left {
-    width: 47%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0 0 10vh 0;
-
-    &__text {
-      width: 100%;
-      height: 55%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      color: #fff;
-      gap: 5px;
-
-      h1 {
-        font-family: var(--second-family);
-        font-size: 3rem;
-      }
-
-      p {
-        font-family: var(--third-family);
-        font-size: 1.625rem;
-      }
-    }
-
-    .buttons {
-      height: 20%;
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .achievements {
-      width: 100%;
-      background: rgba(19, 67, 151, 0.7);
-      border-radius: 15px;
-      padding: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 20%;
-      color: #fff;
-
-      li {
-        padding: 15px;
-        text-align: center;
-        strong {
-          font-family: var(--second-family);
-          font-weight: 400;
-          font-size: 1.6rem;
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        overflow: hidden;
+        
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
         }
-        font-family: var(--third-family);
-        font-size: 1.3rem;
-      }
     }
-  }
 
-  &Right {
-    width: 43%;
-    height: 90%;
-  }
+    .hero__box {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        position: relative;
+        z-index: 1;
+
+        .heroLeft {
+            width: 55%;
+            height: 627px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-top: 52px;
+        }
+    }
 }
 
-@media screen and (max-width: 1050px) {
-  .buttons button {
-    font-size: 20px !important;
-    gap: 5px;
-  }
-}
 
-@media screen and (max-width: 1000px) {
-  .hero {
-    height: 160vh;
-    padding-bottom: 30px;
-
-    &__box {
-      flex-direction: column;
-      align-items: center;
-    }
-    &Left {
-      width: 90%;
-      height: 40%;
-      padding: 0;
-
-      &__text {
-        height: 50%;
-      }
-
-      .buttons {
-        width: 70%;
-      }
-    }
-
-    &Right {
-      width: 90%;
-      height: 55%;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .hero {
-    height: 180vh;
-    &Left {
-      height: 45%;
-
-      &__text {
-        height: 40%;
-      }
-      .buttons {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-
-        button {
-          width: fit-content;
-          justify-content: flex-start;
-          gap: 10px;
-        }
-      }
-    }
-
-    &Right {
-      height: 50%;
-    }
-  }
-}
-
-@media screen and (max-width: 700px) {
-  .hero {
-    padding-top: 15vh;
-  }
-}
-
-@media screen and (max-width: 530px) {
-  .hero {
-    &Left {
-      &__text {
-        h1 {
-          font-size: 2.4rem;
-        }
-
-        p {
-          font-size: 1.4rem;
-        }
-      }
-
-      .achievements {
-        li {
-          font-size: 1rem;
-          strong {
-            font-size: 1.2rem;
-          }
-        }
-      }
-    }
-
-    &Right {
-      width: 95%;
-    }
-  }
-}
-
-@media screen and (max-width: 490px) {
-  .hero {
-    &Left {
-      &__text {
-        h1 {
-          font-size: 1.7rem;
-        }
-
-        p {
-          font-size: 1rem;
-        }
-      }
-      .buttons {
-
-        button {
-          height: 50px;
-          font-size: 18px !important;
-        }
-      }
-
-      .achievements{
-        li{
-          font-size: 0.8rem;
-
-          strong{
-            font-size: 1rem;
-          }
-        }
-      }
-    }
-  }
-}

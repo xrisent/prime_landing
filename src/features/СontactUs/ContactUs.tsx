@@ -25,8 +25,8 @@ export const ContactUs: React.FC = () => {
                     <div className={styles.item3}>
                         <h3 className={styles.item3__title}>{t("contactUs")}</h3>
                         <div className={styles.item3__call}>
-                            <a className={styles.item3__call__link1} href="">info.xyz@gmail.com</a>
-                            <a className={styles.item3__call__link2} href="">+996 504 476-924</a>
+                            <a className={styles.item3__call__link1} href="mailto:info.xyz@gmail.com">info.xyz@gmail.com</a>
+                            <a className={styles.item3__call__link2} href="tel:+996504476924">+996 504 476-924</a>
                         </div>
                     </div>
                 </div>

@@ -29,10 +29,12 @@ export const metadata: Metadata = {
     siteName: 'Prime Landing',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://primelanding.com/og-image.jpg',
+        secureUrl: 'https://primelanding.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Prime Landing — бизнес в ОАЭ',
+        type: 'image/jpeg',
       },
     ],
     locale: 'ru_RU',

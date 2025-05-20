@@ -42,9 +42,6 @@ export const Header: React.FC = () => {
                               size="requestSize"
                             />
                         </div>
-                        {/* <div className={`${styles.header__burger} ${mobile.header__burger}`}>
-                            <Burger/>
-                        </div> */}
                     </div>
 
                 </div>

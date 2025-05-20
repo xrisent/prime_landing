@@ -1,8 +1,8 @@
 export interface ButtonProps {
     text: string | boolean;
     onClick?: () => void;
-    variant?: 'request' | 'number' | 'corner' | 'start';
-    size?: 'requestSize' | 'requestSize' | 'cornerSize' | 'startSize';
+    variant?: 'request' | 'number' | 'corner' | 'start' | 'telega' | 'whatsApp';
+    size?: 'requestSize' | 'requestSize' | 'cornerSize' | 'startSize' | 'telegaSize' | 'whatsAppSize';
     disabled?: boolean;
     type?: 'button' | 'submit' | 'reset';
 }
@@ -71,3 +71,22 @@ export interface FormHeroProps {
   message: string;
   className?: string;
 }
+
+export interface HeroTextProps {
+  h1Text: string;
+  pText: string;
+}
+
+export interface AchievementsProps {
+  li1First: string;
+  li1Second: string;
+  li2First: string;
+  li2Second: string;
+  li3First: string;
+  li3Second: string;
+}
+
+export interface HeroButtonsProps {
+  telegramText: string;
+  whatsappText: string;
+};
