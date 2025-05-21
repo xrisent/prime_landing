@@ -27,9 +27,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
   const [email, setEmail] = useState(initialEmail);
   const [phone, setPhone] = useState<string | undefined>(initialNumber);
   const [message, setMessage] = useState(initialMessage);
-  const [error, setError] = useState("");
 
-  // Мемоизация обработчиков событий
   const handleNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value);
   }, []);
@@ -52,7 +50,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
   }, []);
 
   return (
-    <form className={`formHero ${className}`} onSubmit={handleSubmit}>
+    <form id="heroForm" className={`formHero ${className}`} onSubmit={handleSubmit}>
       <p className='formHero__description'>{pText}</p>
 
       <div className='formHero__formGroup'>

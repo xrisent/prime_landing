@@ -90,3 +90,11 @@ export interface HeroButtonsProps {
   telegramText: string;
   whatsappText: string;
 };
+
+export interface BusinessButtonsProps {
+  businessText: string;
+};
+
+export interface WorkUsButtonsProps {
+  workUsText: string;
+};

@@ -7,11 +7,11 @@ import { FormHero } from "@/widgets/formHero/FormHero";
 import { HeroButtons } from "./ui/HeroButtons/HeroButtons";
 import Image from "next/image";
 
-export const Hero: React.FC = async () => {
+export const Hero = async () => {
   const t = await getTranslations("Hero");
 
   return (
-    <section className={`${styles.hero} ${mobile.hero}`}>
+    <section id="hero" className={`${styles.hero} ${mobile.hero}`}>
       <div className={`${styles.hero__bg} ${mobile.hero__bg}`}>
         <Image
           src="/assets/images/HeroBg.webp"
@@ -22,16 +22,19 @@ export const Hero: React.FC = async () => {
           style={{ objectFit: "cover" }}
         />
       </div>
+
       <div className="container">
         <div className={`${styles.hero__box} ${mobile.hero__box}`}>
           <div className={`${styles.heroLeft} ${mobile.heroLeft}`}>
             <div className={`${styles.hero__box__text} ${mobile.hero__box__text}`}>
               <HeroText h1Text={t("h1")} pText={t("p")} />
             </div>
+
             <HeroButtons
               telegramText={t("telegram")}
               whatsappText={t("whatsapp")}
             />
+
             <Achievements
               li1First={t("li1First")}
               li1Second={t("li1Second")}
@@ -41,6 +44,7 @@ export const Hero: React.FC = async () => {
               li3Second={t("li3Second")}
             />
           </div>
+
           <div className={`${styles.heroRight} ${mobile.heroRight}`}>
             <FormHero
               pText={t("formDescription")}

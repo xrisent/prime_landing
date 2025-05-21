@@ -14,7 +14,7 @@
     transition: color 0.5s ease;
     cursor: pointer;
 
-    &::before {
+    .card::before {
         content: '';
         position: absolute;
         top: -2%;
