@@ -7,7 +7,7 @@ export const BusinessButtons = ({ businessText }: BusinessButtonsProps) => {
         <Button
           text={businessText}
           onClick={() => {
-            const section = document.getElementById("heroForm");
+            const section = document.getElementById("heroRight");
             if (section) {
               section.scrollIntoView({ behavior: "smooth" });
             }

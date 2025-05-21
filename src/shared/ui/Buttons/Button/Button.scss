@@ -204,6 +204,7 @@ Button.request:hover {
 .Button.start {
     background: var(--333);
     color: #fff;
+    transition: background .3s ease-in-out;
 }
 
 Button.start:hover {
