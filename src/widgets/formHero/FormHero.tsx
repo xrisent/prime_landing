@@ -87,7 +87,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
   );
 
   return (
-    <form className={`formHero ${className}`} onSubmit={handleSubmit}>
+    <form id='heroForm' className={`formHero ${className}`} onSubmit={handleSubmit}>
       <p className="formHero__description">{pText}</p>
 
       <div className="formHero__formGroup">

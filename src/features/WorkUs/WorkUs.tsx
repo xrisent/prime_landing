@@ -1,6 +1,5 @@
-"use client"
-import { Button } from '@/shared/ui/Buttons/Button/Button'
 import { WorkItem } from './ui/WorkItem/WorkItem'
+import { WorkUsButtons } from './ui/WorkUsButtons/WorkUsButtons'
 import styles from './WorkUs.module.scss'
 import mobile from './WorkUsMobile.module.scss'
 import { useTranslations } from 'next-intl'
@@ -34,11 +33,8 @@ export const WorkUs: React.FC = () => {
                             />
                         ))}
                      </div>
-                     <Button
-                       text={t("btnCorner")} 
-                       onClick={() => console.log('Hi')}
-                       variant="corner" 
-                       size="cornerSize"
+                     <WorkUsButtons
+                       workUsText={t("btnCorner")} 
                      />
                 </div>
             </div>

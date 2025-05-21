@@ -1,9 +1,8 @@
-"use client"
-import { Button } from '@/shared/ui/Buttons/Button/Button'
 import styles from './BusinessCard.module.scss'
 import mobile from './BusinessCardMobile.module.scss'
 import { BusinessCardProps } from '@/shared/types/types'
 import { useTranslations } from 'next-intl'
+import { BusinessButtons } from '../BusinessButtons/BusinessButtons'
 
 export const BusinessCard: React.FC<BusinessCardProps> = ({title, price, check1, check2, check3, check4}) => {
     const t = useTranslations('BusinessCard');
@@ -22,11 +21,8 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({title, price, check1,
             </ul>
             
             <div className={`${styles.card__btn} ${mobile.card__btn}`}>
-                <Button
-                  text={t("btnBusinessCard")} 
-                  onClick={() => console.log('Hi')}
-                  variant="start" 
-                  size="startSize"
+                <BusinessButtons
+                  businessText={t("btnBusinessCard")}
                 />
             </div>
         </div>

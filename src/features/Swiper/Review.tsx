@@ -7,27 +7,9 @@ export const Review: React.FC = () => {
     const t = useTranslations('Review');
 
     const reviews = [
-      {
-        id: 1,
-        title: t("titleReview1"),
-        text: t("textReview1"),
-        image: '/assets/images/AvatarSwiper.svg',
-        stars: 5,
-      },
-      {
-        id: 2,
-        title: t("titleReview2"),
-        text: t("textReview2"),
-        image: '/assets/images/AvatarSwiper.svg',
-        stars: 4,
-      },
-      {
-        id: 3,
-        title: t("titleReview3"),
-        text: t("textReview3"),
-        image: '/assets/images/AvatarSwiper.svg',
-        stars: 4,
-      },
+      { id: 1, title: t("titleReview1"), text: t("textReview1"), image: '/assets/images/AvatarSwiper.svg', stars: 5 },
+      { id: 2, title: t("titleReview2"), text: t("textReview2"), image: '/assets/images/AvatarSwiper.svg', stars: 4 },
+      { id: 3, title: t("titleReview3"), text: t("textReview3"), image: '/assets/images/AvatarSwiper.svg', stars: 4 },
     ];
 
     return (

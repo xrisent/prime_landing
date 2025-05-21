@@ -91,15 +91,10 @@ export interface HeroButtonsProps {
   whatsappText: string;
 };
 
-export interface ContactUsContentProps {
-  officeAddress: string;
-  officeAddressText1: string;
-  officeAddressText2: string;
+export interface BusinessButtonsProps {
+  businessText: string;
+};
 
-  workingHours: string;
-  workingHoursText1?: string;
-
-  workingHoursText2?: string;
-
-  contactUs: string;
-}
+export interface WorkUsButtonsProps {
+  workUsText: string;
+};
