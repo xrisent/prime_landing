@@ -1,6 +1,6 @@
 import styles from './Map.module.scss';
 
-export const Map: React.FC<{}> = () => {
+export const Map = () => {
   return (
     <section className={styles.mapSection}>
       <div className={`container ${styles.containerMap}`}>

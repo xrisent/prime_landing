@@ -9,7 +9,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/shared/lib/i18n/routing";
 
 export const metadata: Metadata = {
-  title: 'Prime Setup Landing',
+  title: 'Prime Setup',
   description: 'Платформа для быстрого запуска вашего бизнеса в ОАЭ.',
   keywords: ['бизнес в ОАЭ', 'открытие компании', 'Prime Landing', 'эмираты', 'регистрация бизнеса'],
   authors: [{ name: 'Prime Landing Team', url: 'https://primelanding.com' }],
@@ -51,13 +51,19 @@ export const metadata: Metadata = {
 };
 
 
-type Props = {
-  children: ReactNode;
-  params: { locale: string };
-};
+// type Props = {
+//   children: ReactNode;
+//   params: { locale: string };
+// };
 
-export default async function LocaleLayout({ children, params }: Props) {
-  const { locale } = await Promise.resolve(params);
+export default async function LocaleLayout({
+  children,
+  params,
+}: {
+  children: ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
     notFound();

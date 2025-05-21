@@ -8,9 +8,9 @@ import { useTranslations } from "next-intl";
 
 const PhoneInput = dynamic(
   () => import("react-phone-number-input").then((mod) => mod.default),
-  { 
+  {
     ssr: false,
-    loading: () => <input type="tel" placeholder="Loading phone input..." />
+    loading: () => <input type="tel" placeholder="Loading phone input..." />,
   }
 );
 
@@ -27,33 +27,70 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
   const [email, setEmail] = useState(initialEmail);
   const [phone, setPhone] = useState<string | undefined>(initialNumber);
   const [message, setMessage] = useState(initialMessage);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleNameChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setName(e.target.value);
-  }, []);
+  const handleNameChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setName(e.target.value);
+    },
+    []
+  );
 
-  const handleEmailChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(e.target.value);
-  }, []);
+  const handleEmailChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setEmail(e.target.value);
+    },
+    []
+  );
 
   const handlePhoneChange = useCallback((value?: string) => {
     setPhone(value);
   }, []);
 
-  const handleMessageChange = useCallback((e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(e.target.value);
-  }, []);
+  const handleMessageChange = useCallback(
+    (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      setMessage(e.target.value);
+    },
+    []
+  );
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    // Логика  формы
-  }, []);
+  const handleSubmit = useCallback(
+    async (e: React.FormEvent) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+
+      try {
+        await fetch("/api/send-email", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            phone,
+            message,
+          }),
+        });
+        
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      } catch (error) {
+        console.error("Error:", error);
+      } finally {
+        setIsSubmitting(false);
+      }
+    },
+    [name, email, phone, message]
+  );
 
   return (
     <form className={`formFooter ${className}`} onSubmit={handleSubmit}>
-      <h3 className='formFooter__description'>{pText}</h3>
+      <h3 className="formFooter__description">{pText}</h3>
 
-      <div className='formFooter__formGroup'>
+      <div className="formFooter__formGroup">
         <input
           type="text"
           id="name"
@@ -64,7 +101,7 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
         />
       </div>
 
-      <div className='formFooter__formGroup'>
+      <div className="formFooter__formGroup">
         <input
           type="email"
           id="email"
@@ -75,7 +112,7 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
         />
       </div>
 
-      <div className='formFooter__formGroup'>
+      <div className="formFooter__formGroup">
         <PhoneInput
           international
           value={phone}
@@ -84,7 +121,7 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
         />
       </div>
 
-      <div className='formFooter__formGroup textareaFormGroup'>
+      <div className="formFooter__formGroup textareaFormGroup">
         <textarea
           id="message"
           value={message}
@@ -94,8 +131,12 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
         />
       </div>
 
-      <button type="submit" className='formFooter__button'>
-        {t("send")}
+      <button
+        type="submit"
+        className="formFooter__button"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? t("sending") : t("send")}
       </button>
     </form>
   );

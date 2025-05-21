@@ -1,6 +1,6 @@
 import styles from './ContactUsSvg.module.scss'
 
-export const ContactUsSvg: React.FC<{}> = () => {
+export const ContactUsSvg: React.FC = () => {
   return (
     <div className={styles.contactUsImages}>
       <svg

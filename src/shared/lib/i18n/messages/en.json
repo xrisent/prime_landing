@@ -22,7 +22,8 @@
     "email": "E-mail address",
     "number": "Phone number",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "sending": "Sending..."
   },
 
   "FormFooter": {
@@ -30,7 +31,8 @@
     "email": "E-mail address",
     "number": "Phone number",
     "message": "Message",
-    "send": "Send"
+    "send": "Send",
+    "sending": "Sending..."
   },
 
   "ContactUs":{
