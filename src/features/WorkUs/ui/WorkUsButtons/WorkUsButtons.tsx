@@ -7,7 +7,7 @@ export const WorkUsButtons = ({ workUsText }: WorkUsButtonsProps) => {
         <Button
           text={workUsText}
           onClick={() => {
-            const section = document.getElementById("heroForm");
+            const section = document.getElementById("heroRight");
             if (section) {
               section.scrollIntoView({ behavior: "smooth" });
             }

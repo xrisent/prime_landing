@@ -32,6 +32,7 @@ export const ReviewSwiper: React.FC<ReviewSwiperProps> = ({ reviews }) => {
       <Swiper
         modules={[Pagination, Autoplay]}
         autoplay={{ delay: 3000 }}
+        spaceBetween={10}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         className={`${styles.my__swiper} ${mobile.my__swiper}`}
       >

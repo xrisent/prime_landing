@@ -45,7 +45,7 @@ export const Hero = async () => {
             />
           </div>
 
-          <div className={`${styles.heroRight} ${mobile.heroRight}`}>
+          <div className={`${styles.heroRight} ${mobile.heroRight}`} id="heroRight">
             <FormHero
               pText={t("formDescription")}
               name=""
