@@ -27,7 +27,7 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
   const [email, setEmail] = useState(initialEmail);
   const [phone, setPhone] = useState<string | undefined>(initialNumber);
   const [message, setMessage] = useState(initialMessage);
-  const [error, setError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleNameChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,9 +57,10 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
+      setIsSubmitting(true);
 
       try {
-        const response = await fetch("/api/send-email", {
+        await fetch("/api/send-email", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -71,16 +72,15 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
             message,
           }),
         });
-
-        if (!response.ok) throw new Error("Failed to send email");
-
-        alert("Message sent successfully!");
+        
         setName("");
         setEmail("");
         setPhone("");
         setMessage("");
       } catch (error) {
         console.error("Error:", error);
+      } finally {
+        setIsSubmitting(false);
       }
     },
     [name, email, phone, message]
@@ -131,8 +131,12 @@ export const FormHero: React.FC<FormHeroProps> = memo(function FormHero({
         />
       </div>
 
-      <button type="submit" className="formHero__button">
-        {t("send")}
+      <button
+        type="submit"
+        className="formHero__button"
+        disabled={isSubmitting}
+      >
+        {isSubmitting ? t("sending") : t("send")}
       </button>
     </form>
   );

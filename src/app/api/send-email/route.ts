@@ -14,8 +14,24 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
+      from: `"Prime Setup UAE" <${process.env.GMAIL_EMAIL}>`,
+      to: email,
+      subject: 'Thank you for your request',
+      html: `
+        <h1>Thank you for your request</h1>
+        <p>Dear ${name},</p>
+        <p>Your submission has been received.</p>
+        <p>Our team will contact you within the next hour.</p>
+        <p>We appreciate your interest and look forward to speaking with you.</p>
+        <br/>
+        <p>Best regards,</p>
+        <p>Prime Setup UAE Team</p>
+      `,
+    });
+
+    await transporter.sendMail({
       from: `"Form Submission" <${process.env.GMAIL_EMAIL}>`,
-      to: process.env.RECIPIENT_EMAIL,
+      to: process.env.GMAIL_EMAIL_RECIEVER,
       subject: 'New Contact Form Submission',
       html: `
         <h1>New Contact Form Submission</h1>
@@ -23,12 +39,14 @@ export async function POST(request: Request) {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
         <p><strong>Message:</strong> ${message}</p>
+        <br/>
+        <p>This message was sent from the contact form on the Prime setup website.</p>
       `,
     });
 
     return NextResponse.json({ 
       success: true,
-      message: 'Email sent successfully' 
+      message: 'Emails sent successfully' 
     }, { 
       status: 200 
     });
