@@ -6,24 +6,23 @@ export const Achievements: React.FC<AchievementsProps> = ({
   li1Second,
   li2First,
   li2Second,
-  li3First,
   li3Second,
 }) => {
-  const items = [
-    { first: li1First, second: li1Second },
-    { first: li2First, second: li2Second },
-    { first: li3First, second: li3Second }
-  ];
 
   return (
-    <ul className={styles.achievements}>
-      {items.map((el, idx) => (
-        <li key={idx}>
-          <strong>{el.first}</strong>
-          <br />
-          {el.second}
-        </li>
-      ))}
-    </ul>
+
+    <div className={styles.achievements}>
+        <div className={styles.achievements__item1}>
+          <h5 className={styles.item1__title}>{li1First}</h5>
+          <p className={styles.item1__text}>{li1Second}</p>
+        </div>
+        <div className={styles.achievements__item2}>
+          <h5 className={styles.item2__title}>{li2First}</h5>
+          <p className={styles.item2__text}>{li2Second}</p>
+        </div>
+        <div className={styles.achievements__item3}>
+          <p className={styles.item3__text}>{li3Second}</p>
+        </div>
+    </div>
   );
 };

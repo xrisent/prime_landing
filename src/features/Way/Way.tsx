@@ -21,8 +21,8 @@ export const Way: React.FC = () => {
         { src: '/assets/images/WayLine3.svg', className: `${styles.way__line3} ${mobile.way__line3}`, height: 54 },
         { src: '/assets/images/WayLine3.svg', className: `${styles.way__line4} ${mobile.way__line4}`, height: 28 },
         { src: '/assets/images/WayLine3.svg', className: `${styles.way__line5} ${mobile.way__line5}`, height: 28 },
-        { src: '/assets/images/WayLine4.svg', className: `${styles.way__line6} ${mobile.way__line6}`, height: 28 },
-        { src: '/assets/images/WayLine5.svg', className: `${styles.way__line7} ${mobile.way__line7}`, height: 28 },
+        { src: '/assets/images/WayLine3.svg', className: `${styles.way__line6} ${mobile.way__line6}`, height: 28 },
+        { src: '/assets/images/WayLine3.svg', className: `${styles.way__line7} ${mobile.way__line7}`, height: 28 },
     ];
 
 
@@ -43,7 +43,10 @@ export const Way: React.FC = () => {
             <div className="container">
                 <div className={`${styles.way__box} ${mobile.way__box}`}>
                     <div className={`${styles.way__in} ${mobile.way__in}`}>
-                        <h2 className={`${styles.way__title} ${mobile.way__title}`}>{t("h2Way")}</h2>
+                        <div className={`${styles.way__in__up} ${mobile.way__in__up}`}>
+                            <h2 className={`${styles.way__title} ${mobile.way__title}`}>{t("h2Way")}</h2>
+                            <p className={`${styles.way__text} ${mobile.way__text}`}>{t("pWay")}</p>
+                        </div>
                         <div className={`${styles.way__items} ${mobile.way__items}`}>
                             {way.map((el, idx) => (
                                 <WayCard

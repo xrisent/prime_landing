@@ -6,6 +6,7 @@ import { Achievements } from "./ui/Achievements/Achievements";
 import { FormHero } from "@/widgets/formHero/FormHero";
 import { HeroButtons } from "./ui/HeroButtons/HeroButtons";
 import Image from "next/image";
+import { HeroCheck } from "./ui/CheckHero/CheckHero";
 
 export const Hero = async () => {
   const t = await getTranslations("Hero");
@@ -35,12 +36,17 @@ export const Hero = async () => {
               whatsappText={t("whatsapp")}
             />
 
+            <HeroCheck
+              li1={t("LiCheck1")}
+              li2={t("LiCheck2")}
+              li3={t("LiCheck3")}
+            />
+
             <Achievements
               li1First={t("li1First")}
               li1Second={t("li1Second")}
               li2First={t("li2First")}
               li2Second={t("li2Second")}
-              li3First={t("li3First")}
               li3Second={t("li3Second")}
             />
           </div>

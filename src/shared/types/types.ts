@@ -33,12 +33,14 @@ export interface QuestionsItemProps {
 }
 
 export interface BusinessCardProps {
-    title: string
-    price: string
-    check1: string
-    check2: string
-    check3: string
-    check4: string
+  title: string;
+  price: string;
+  checks: string[];
+}
+
+export interface DropdownOption {
+  label: string;
+  value: string;
 }
 
 export interface WayCardProps {
@@ -82,7 +84,6 @@ export interface AchievementsProps {
   li1Second: string;
   li2First: string;
   li2Second: string;
-  li3First: string;
   li3Second: string;
 }
 
@@ -98,3 +99,9 @@ export interface BusinessButtonsProps {
 export interface WorkUsButtonsProps {
   workUsText: string;
 };
+
+export interface HeroCheckProps {
+  li1: string
+  li2: string
+  li3: string
+}

@@ -1,7 +1,7 @@
 .hero {
     position: relative;
-    height: 1042px;
-    padding-top: 27vh;
+    height: 1268px;
+    padding-top: 25vh;
 
     &__bg {
         position: absolute;
@@ -23,17 +23,15 @@
         padding-top: 20px;
         display: flex;
         justify-content: space-between;
-        gap: 50px;
+        gap: 18px;
         position: relative;
         z-index: 1;
 
         .heroLeft {
             width: 55%;
-            height: 627px;
+            height: 980px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding-top: 52px;
         }
 
         .heroRight{

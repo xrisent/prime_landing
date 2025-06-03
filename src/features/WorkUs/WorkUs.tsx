@@ -13,6 +13,7 @@ export const WorkUs: React.FC = () => {
         {img: '/assets/icons/Work3.svg', title: t("title3"), text: t("text3")},
         {img: '/assets/icons/Work4.svg', title: t("title4"), text: t("text4")},
         {img: '/assets/icons/Work5.svg', title: t("title5"), text: t("text5")},
+        {img: '/assets/icons/Work6.svg', title: t("title6"), text: t("text6")},
     ]
 
     return (

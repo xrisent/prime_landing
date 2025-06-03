@@ -16,7 +16,7 @@
     
         .way__line6 {
             position: absolute;
-            top: 16%;
+            top: 15%;
             min-width: 100vw;
             height: 28px;
             max-width: 100%;
@@ -25,7 +25,7 @@
     
         .way__line7 {
             position: absolute;
-            top: 82%;
+            top: 83%;
             width: 100vw;
             height: 28px;
             max-width: 100%;
@@ -34,7 +34,7 @@
 
         .way__line3 {
             position: absolute;
-            top: 65%;
+            top: 66%;
             width: 100vw;
             height: 28px;
             max-width: 100%;
@@ -43,7 +43,7 @@
 
         .way__line4 {
             position: absolute;
-            top: 50%;
+            top: 49%;
             width: 100vw;
             height: 25px;
             max-width: 100%;
@@ -52,7 +52,7 @@
 
         .way__line5 {
             position: absolute;
-            top: 33%;
+            top: 32%;
             width: 100vw;
             height: 28px;
             max-width: 100%;
@@ -66,10 +66,17 @@
                 gap: 40px;
                 padding-top: 0;
                 padding-bottom: 120px;
-    
-                .way__title {
-                    font-size: 24px;
-                    line-height: 108%;
+
+                .way__in__up {
+
+                    .way__title {
+                        font-size: 24px;
+                        line-height: 108%;
+                    }
+
+                    .way__text {
+                        display: none;
+                    }
                 }
     
                 .way__items {
