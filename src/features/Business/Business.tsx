@@ -7,10 +7,11 @@ export const Business: React.FC = () => {
     const t = useTranslations('Business');
 
     const business = [
-        {title: t("title1Business"), price: t("price1Business"), check1: t("check1Business1"), check2: t("check2Business1"), check3: t("check3Business1"), check4: t("check4Business1")},
-        {title: t("title2Business"), price: t("price2Business"), check1: t("check1Business2"), check2: t("check2Business2"), check3: t("check3Business2"), check4: t("check4Business2")},
-        {title: t("title3Business"), price: t("price3Business"), check1: t("check1Business3"), check2: t("check2Business3"), check3: t("check3Business3"), check4: t("check4Business3")},
-    ] 
+      { title: t("title1Business"), price: t("price1Business"), checks: [ t("check1Business1"), t("check1Business2"), t("check1Business3"), t("check1Business4"), t("check1Business5"), t("check1Business6"), t("check1Business7") ] },
+      { title: t("title2Business"),price: t("price2Business"),checks: [ t("check2Business1"),  t("check2Business2"),  t("check2Business3"),  t("check2Business4"),  t("check2Business5"),  t("check2Business6"),  t("check2Business7"),  t("check2Business8") ] },
+      { title: t("title3Business"), price: t("price3Business"), checks: [  t("check3Business1"),   t("check3Business2"),   t("check3Business3"),   t("check3Business4"),   t("check3Business5"),   t("check3Business6") ] },
+    ];
+
 
     return (
         <section className={`${styles.business} ${mobile.business}`}>
@@ -21,17 +22,15 @@ export const Business: React.FC = () => {
                         <p className={`${styles.business__text} ${mobile.business__text}`}>{t("pBusiness")}</p>
                     </div>
                     <div className={`${styles.business__items} ${mobile.business__items}`}>
-                        {business.map((el,idx)=>(
-                            <BusinessCard
-                               key={idx}
-                               title={el.title}
-                               price={el.price}
-                               check1={el.check1}
-                               check2={el.check2}
-                               check3={el.check3}
-                               check4={el.check4}
-                            />
+                        {business.map((el, idx) => (
+                          <BusinessCard
+                            key={idx}
+                            title={el.title}
+                            price={el.price}
+                            checks={el.checks}
+                          />
                         ))}
+
                     </div>
                 </div>
             </div>
