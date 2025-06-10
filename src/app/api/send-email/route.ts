@@ -3,7 +3,34 @@ import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
-    const { name, email, phone, message } = await request.json();
+    const { name, email, phone, message, recaptcha } = await request.json();
+
+    if (!recaptcha) {
+      return NextResponse.json(
+        { 
+          success: false,
+          message: 'reCAPTCHA verification failed' 
+        },
+        { status: 400 }
+      );
+    }
+
+    const verificationUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${recaptcha}`;
+    const recaptchaResponse = await fetch(verificationUrl, {
+      method: 'POST',
+    });
+    const recaptchaData = await recaptchaResponse.json();
+
+    if (!recaptchaData.success) {
+      return NextResponse.json(
+        { 
+          success: false,
+          message: 'reCAPTCHA verification failed',
+          details: recaptchaData['error-codes'] 
+        },
+        { status: 400 }
+      );
+    }
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',

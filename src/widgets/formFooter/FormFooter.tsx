@@ -5,6 +5,7 @@ import "react-phone-number-input/style.css";
 import "./FormFooter.scss";
 import { FormHeroProps } from "@/shared/types/types";
 import { useTranslations } from "next-intl";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const PhoneInput = dynamic(
   () => import("react-phone-number-input").then((mod) => mod.default),
@@ -28,6 +29,7 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
   const [phone, setPhone] = useState<string | undefined>(initialNumber);
   const [message, setMessage] = useState(initialMessage);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
 
   const handleNameChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,9 +56,19 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
     []
   );
 
+  const handleRecaptchaChange = useCallback((value: string | null) => {
+    setRecaptchaValue(value);
+  }, []);
+
   const handleSubmit = useCallback(
     async (e: React.FormEvent) => {
       e.preventDefault();
+      
+      if (!recaptchaValue) {
+        alert(t("recaptchaError"));
+        return;
+      }
+
       setIsSubmitting(true);
 
       try {
@@ -70,6 +82,7 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
             email,
             phone,
             message,
+            recaptcha: recaptchaValue,
           }),
         });
         
@@ -77,13 +90,14 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
         setEmail("");
         setPhone("");
         setMessage("");
+        setRecaptchaValue(null);
       } catch (error) {
         console.error("Error:", error);
       } finally {
         setIsSubmitting(false);
       }
     },
-    [name, email, phone, message]
+    [name, email, phone, message, recaptchaValue, t]
   );
 
   return (
@@ -131,10 +145,17 @@ export const FormFooter: React.FC<FormHeroProps> = memo(function FormFooter({
         />
       </div>
 
+      <div className="formFooter__formGroup">
+        <ReCAPTCHA
+          sitekey="6LfBPFsrAAAAAGQJlcm5RJgvkJxAIJYSgVxNYvCd" 
+          onChange={handleRecaptchaChange}
+        />
+      </div>
+
       <button
         type="submit"
         className="formFooter__button"
-        disabled={isSubmitting}
+        disabled={isSubmitting || !recaptchaValue}
       >
         {isSubmitting ? t("sending") : t("send")}
       </button>
